@@ -1,0 +1,138 @@
+@font-face {
+  font-family: Raleway;
+  src: url("/src/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+  font-weight: 1 999;
+}
+@font-face {
+  font-family: Inter;
+  src: url("/src/assets/fonts/Inter/Inter-VariableFont_slnt,wght.ttf") format("truetype");
+}
+h1 {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 130%;
+}
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 1279px) {
+  h1 {
+    font-size: 21px;
+  }
+}
+
+h2 {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+h3 {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h4 {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+@media (min-width: 1280px) {
+  h4 {
+    font-size: 15px;
+    line-height: 18px;
+  }
+}
+@media (max-width: 1279px) {
+  h4 {
+    font-size: 14px;
+    line-height: 16px;
+  }
+}
+
+h5 {
+  font-family: Inter, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+}
+@media (min-width: 1280px) {
+  h5 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 1279px) {
+  h5 {
+    font-size: 14px;
+  }
+}
+
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  list-style-type: none;
+  text-underline: none;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+}
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  color: #F0FBF7;
+}
+
+body {
+  background-color: #141A28;
+}
+
+.lighthouse {
+  position: absolute;
+  background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%);
+  width: 2000px;
+  height: 2000px;
+  z-index: -1;
+}
+
+.nft-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.nft-button:hover {
+  background-color: #00A469 !important;
+}
+.nft-button:active {
+  background-color: #008053 !important;
+}
+
+.nft-social-link:hover {
+  background-color: rgba(166, 166, 166, 0.2) !important;
+}
+.nft-social-link:active {
+  background-color: rgba(131, 131, 131, 0.2) !important;
+}
+
+@media (max-width: 1279px), (any-pointer: coarse) {
+  .nft-social-link-mobile:hover {
+    background-color: rgba(166, 166, 166, 0.2) !important;
+  }
+  .nft-social-link-mobile:active {
+    background-color: rgba(131, 131, 131, 0.2) !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

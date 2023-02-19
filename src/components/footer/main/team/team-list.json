@@ -1,0 +1,50 @@
+[
+
+  {
+    "name": "Ali Daneshvar",
+    "post": "CEO",
+    "imagePath": "Ali_Daneshvar"
+  },
+
+  {
+    "name": "Anton Kislii",
+    "post": "CMO",
+    "imagePath": "Anton_Kislinsky"
+  },
+
+  {
+    "name": "Lana Mayer",
+    "post": "CAO",
+    "imagePath": "Lana_Mayer"
+  },
+
+  {
+    "name": "Marco Gasini",
+    "post": "NFT Artist",
+    "imagePath": "Marco_Gasini"
+  },
+
+  {
+    "name": "Johan Koning",
+    "post": "Historian",
+    "imagePath": "Yuri_Konchik"
+  },
+
+  {
+    "name": "Vladimir Koning",
+    "post": "NFT ideologist",
+    "imagePath": "Vladimir_Konchik"
+  },
+
+  {
+    "name": "Renat Galiev",
+    "post": "Web-developer",
+    "imagePath": "Renat_Galiev"
+  },
+
+  {
+    "name": "Dumitru Rafi",
+    "post": "App-developer",
+    "imagePath": "Dmitro_Petrik"
+  }
+]

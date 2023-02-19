@@ -1,0 +1,44 @@
+@import fonts, mixins, reset, variables
+
+\:root
+  font-synthesis: none
+  text-rendering: optimizeLegibility
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  -webkit-text-size-adjust: 100%
+
+  color: $white
+
+body
+  background-color: $mainBackground
+
+.lighthouse
+  position: absolute
+  background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%)
+  width: 2000px
+  height: 2000px
+  z-index: -1
+
+.nft-button
+  +user-select(none)
+
+  &:hover
+    background-color: $buttonHover !important
+
+  &:active
+    background-color: $buttonClick !important
+
+.nft-social-link
+  &:hover
+    background-color: $socialLinkHover !important
+
+  &:active
+    background-color: $socialLinkClick !important
+
+.nft-social-link-mobile
+  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    &:hover
+      background-color: $socialLinkHover !important
+
+    &:active
+      background-color: $socialLinkClick !important

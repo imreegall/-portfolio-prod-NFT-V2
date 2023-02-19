@@ -1,0 +1,36 @@
+[
+  {
+    "name": "Twitter",
+    "imagePath": "twitter.svg",
+    "link": "https://twitter.com/ordinalslegends",
+    "title": "https://twitter.com/historynftart"
+  },
+
+  {
+    "name": "Tik-Tok",
+    "imagePath": "tiktok.svg",
+    "link": "https://www.tiktok.com/@historical.collection",
+    "title": "https://www.tiktok.com/@historical.collection"
+  },
+
+  {
+    "name": "YouTube",
+    "imagePath": "youtube.svg",
+    "link": "https://youtube.com/@historical.collection",
+    "title": "https://youtube.com/@historical.collection"
+  },
+
+  {
+    "name": "Instagram",
+    "imagePath": "instagram.svg",
+    "link": "https://www.instagram.com/historicalcollection.art/?igshid=YmMyMTA2M2Y%20(https%3A%2F%2Finstagram.com%2Fhistoricalcollection.art%3Figshid%3DYmMyMTA2M2Y%3D)",
+    "title": "https://www.instagram.com/historicalcollection.art/..."
+  },
+
+  {
+    "name": "Discord",
+    "imagePath": "discord.svg",
+    "link": "https://discord.gg/historicalcollection",
+    "title": "https://discord.gg/historicalcollection"
+  }
+]
