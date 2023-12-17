@@ -35,12 +35,12 @@
     <div class="welcome-content">
       <div class="content-info">
         <div class="info-title">
-          <h2>Historical Collection</h2>
+          <h2>Bitcoin Historical Collection</h2>
         </div>
 
         <div class="info-text">
           <h3>The first collection dedicated
-            to legendary historical people. 3333 NFT
+            to legendary historical people. 1000 NFT
             with a memorable artistic concept
             will not leave anyone indifferent. Each NFT
             is legendary and the only one painting
@@ -49,8 +49,15 @@
         </div>
       </div>
 
-      <h2><label class="content-button nft-button" for="checkbox-for-join">Join community</label></h2>
-<!--      <h2><router-link to="#social-media" class="content-button nft-button">Join community</router-link></h2>-->
+      <div class="welcome-buttons">
+        <h2><label class="content-button nft-button" for="checkbox-for-join">Join community</label></h2>
+
+        <h2><a
+            class="nft-button content-button"
+            href="https://magiceden.io/ordinals/marketplace/historical"
+            target="_blank"
+        >View Collection</a></h2>
+      </div>
     </div>
   </div>
 </template>
@@ -228,22 +235,28 @@ export default {
           @media (max-width: $smallScreenEnd), (any-pointer: coarse)
             font-size: 16px
 
-      .content-button
-        display: block
-        background-color: $green
-        +border-radius(41px)
-        color: $darkgreen
-        cursor: pointer
+      .welcome-buttons
+        display: flex
+        flex-direction: column
+        gap: 20px
 
-        @media (min-width: $bigScreenStart)
-          padding: 16px 50px 18px
-          font-size: 24px
-          line-height: 28px
+        .content-button
+          display: block
+          background-color: $green
+          +border-radius(41px)
+          color: $darkgreen
+          cursor: pointer
+          text-align: center
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
-          padding: 16px 40px 18px
-          font-size: 18px
-          line-height: 21px
+          @media (min-width: $bigScreenStart)
+            padding: 16px 50px 18px
+            font-size: 24px
+            line-height: 28px
+
+          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            padding: 16px 40px 18px
+            font-size: 18px
+            line-height: 21px
 
     .welcome-logo-container
       align-self: center

@@ -17,7 +17,6 @@
     display: flex
     justify-content: center
     width: 100%
-    overflow: hidden
 
     .mainContainer
       display: flex
@@ -26,10 +25,10 @@
       width: 100%
       min-height: 100vh
 
-      @media (min-width: $bigScreenStart)
-        $padding: 60px
-        max-width: calc(1430px + $padding * 2)
-
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
-        max-width: 100%
+      //@media (min-width: $bigScreenStart)
+      //  $padding: 60px
+      //  max-width: calc(1430px + $padding * 2)
+      //
+      //@media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      //  max-width: 100%
 </style>

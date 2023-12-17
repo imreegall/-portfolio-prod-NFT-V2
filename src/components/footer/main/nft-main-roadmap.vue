@@ -35,11 +35,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Airdrop TRUD token. Development
-                  of a web-service for the exchange
-                  of cryptocurrency and transfers
-                  of money. Launch of an advertising
-                  company.</h3>
+                <h3>Airdrop TRUD token. Development of a web-service for Ordinals. Launch of an advertising company.</h3>
               </div>
 
               <div class="quarter-round">
@@ -52,8 +48,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Development of the application, adding
-                  the service to the AppStore and GooglePlay.</h3>
+                <h3>Development of the application, adding the service to the AppStore and GooglePlay. Creating collectors club.</h3>
               </div>
 
               <div class="quarter-round">
@@ -66,8 +61,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Participation in crypto
-                  forums, work on AI products.</h3>
+                <h3>Participation in crypto forums and other thematic exhibitions.</h3>
               </div>
 
               <div class="quarter-round">

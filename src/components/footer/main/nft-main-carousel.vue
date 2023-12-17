@@ -50,6 +50,8 @@ export default {
     flex-direction: column
     align-items: center
     gap: var(--gap)
+    width: 100%
+    overflow: hidden
 
     @media (min-width: $bigScreenStart)
       --gap: calc(100vw / 100 * (20 / (1920 / 100)))

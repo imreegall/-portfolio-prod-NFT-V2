@@ -1,14 +1,16 @@
 <template>
   <div class="nft-header">
-    <input class="header-checkbox" type="checkbox" id="input-checkbox-burger">
-    <div class="header-burger">
+    <h1 class="title">TRUD FAMILY</h1>
+
+    <input class="header-checkbox" type="checkbox" id="input-checkbox-burger" v-if="false">
+    <div class="header-burger" v-if="false">
       <label for="input-checkbox-burger"/>
       <div class="burger-line1"></div>
       <div class="burger-line2"></div>
       <div class="burger-line3"></div>
     </div>
 
-    <div class="header-menu">
+    <div class="header-menu" v-if="false">
       <div class="header-cross">
         <label for="input-checkbox-burger"></label>
         <div class="cross-line1"></div>
@@ -77,14 +79,21 @@ export default {
 
 <style lang="sass">
   .nft-header
+    position: absolute
+    top: 0
+
     @media (min-width: $bigScreenStart)
       $padding: 60px
       padding: 40px $padding 150px
 
     @media (max-width: $smallScreenEnd), (any-pointer: coarse)
-      align-self: flex-end
+      //align-self: flex-end
       $padding: 20px
       padding: 30px $padding 0
+
+    > .title
+      text-align: center
+      font-size: 40px
 
     .header-checkbox
       display: none

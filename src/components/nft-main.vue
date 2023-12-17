@@ -1,11 +1,16 @@
 <template>
   <div class="nft-main">
-    <nft-main-welcome/>
-    <nft-main-carousel/>
+    <div class="wrapper">
+      <nft-main-welcome/>
+      <nft-main-carousel/>
+    </div>
+
+    <nft-main-parallax />
     <nft-main-social-network/>
-    <nft-main-social-support/>
-    <nft-main-roadmap/>
-    <nft-main-team/>
+<!--    <nft-main-social-support/>-->
+<!--    <nft-main-roadmap/>-->
+<!--    <nft-main-team/>-->
+<!--    <nft-main-model/>-->
   </div>
 </template>
 
@@ -16,6 +21,8 @@ import nftMainSocialSupport from "./footer/main/nft-main-social-support.vue";
 import nftMainTeam from "./footer/main/nft-main-team.vue";
 import nftMainCarousel from "./footer/main/nft-main-carousel.vue";
 import nftMainRoadmap from "./footer/main/nft-main-roadmap.vue";
+import nftMainModel from "./footer/main/nft-main-model.vue";
+import nftMainParallax from "./footer/main/nft-main-parallax.vue";
 
 export default {
   name: "nft-main",
@@ -25,7 +32,9 @@ export default {
     nftMainSocialSupport,
     nftMainTeam,
     nftMainCarousel,
-    nftMainRoadmap
+    nftMainRoadmap,
+    nftMainModel,
+    nftMainParallax,
   }
 }
 </script>
@@ -39,11 +48,26 @@ export default {
 
     @media (min-width: $bigScreenStart)
       gap: 140px
-      $padding: 60px
-      padding: 0 $padding
+      //$padding: 60px
+      //padding: 0 $padding
 
     @media (max-width: $smallScreenEnd), (any-pointer: coarse)
       gap: 60px
-      $padding: 8px
-      padding: 0 $padding
+      //$padding: 8px
+      //padding: 0 $padding
+
+    > .wrapper
+      width: 100%
+      display: flex
+      flex-direction: column
+      align-items: center
+      overflow: hidden
+
+      @media (min-width: $bigScreenStart)
+        gap: 140px
+        padding-top: 252px
+
+      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        gap: 60px
+        padding-top: 82px
 </style>

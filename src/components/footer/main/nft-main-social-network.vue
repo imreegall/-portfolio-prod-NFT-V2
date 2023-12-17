@@ -3,18 +3,55 @@
     <div class="social-launch-networks">
       <div class="launch-networks-content">
         <div class="launch-networks-text">
-          <h3>We launched channels in all popular
-            social networks, where we talk about
-            interesting historical facts of legendary
-            people in the historical collection, a huge
-            amount of content and short video
-            clips, each of which mentions
-            the project. With the growing
-            popularity of media resources, the cost
-            of NFTs will increase.</h3><br>
+          <h3>We have launched channels in all popular
+            social networks where we talk about interesting
+            historical facts related to legendary people
+            in the collection, a huge amount of content
+            and short video clips, each of which
+            has a mention of the project. With the growing
+            popularity of media resources,
+            the cost of NFT will increase. </h3>
 
-          <h3>The more popular will be collection, the more
-            privileges will be open to collectors.</h3>
+<!--          <h3>The Historical Collection is not just-->
+<!--            the first NFT collection with portraits-->
+<!--            of legendary historical people. This is-->
+<!--            a brand. And we will promote this name in-->
+<!--            many different areas.</h3><br>-->
+
+<!--          <h3>The historical collection has a truly-->
+<!--            unlimited future. People change, one-->
+<!--            generation replaces another, and each-->
+<!--            generation has its own people that can be-->
+<!--            added to the historical collection.</h3><br>-->
+
+<!--          <h3>After the completion of sale of 1000 NFTs,-->
+<!--            the historical collection does not stop or-->
+<!--            die. It continues to live in a decentralized-->
+<!--            way. Every Sunday, 1 NFT is added to the-->
+<!--            historical collection by a general vote of-->
+<!--            collectors. After voting, this NFT is put up-->
+<!--            for open auction. Collectors with 10 or more-->
+<!--            NFTs may offer personalities to add to the-->
+<!--            historical collection. Everyone participates-->
+<!--            in the voting, 1 NFT = 1 vote.</h3><br>-->
+
+<!--          <h3>This is a memorial hall of fame in the-->
+<!--            digital world of bitcoin. Only non-living-->
+<!--            people can get into the Historical Collection.</h3><br>-->
+
+<!--          <h3>Our mission is to make this collection-->
+<!--            popular and pass it down to our descendants.-->
+<!--            People should be the most popular-->
+<!--            in the nft world.</h3><br>-->
+
+<!--          <h3>With the help of bitcoin, we can do this,-->
+<!--            because there are no smart contracts and-->
+<!--            their owners. This is a truly decentralized-->
+<!--            world that suits the historical-->
+<!--            collection the best.</h3><br>-->
+
+<!--          <h3>The more popular will be collection, the more-->
+<!--            privileges will be open to collectors.</h3>-->
         </div>
 
         <div class="launch-networks-images" id="social-media">
@@ -26,128 +63,128 @@
             <div class="launch-networks-image2"></div>
           </div>
 
-          <div class="lighthouse"></div>
+          <div class="lighthouse-small"></div>
         </div>
       </div>
 
-      <div class="social-media-icons">
-        <a
-            class="social-media-icon nft-social-link"
-            v-for="social in socials"
-            v-bind:href="social.link"
-            v-bind:title="social.title"
-            target="_blank"
-            rel="nofollow"
-        >
-          <div
-              class="social-icon"
-              v-bind:style="'background-image: url(assets/images/socialIcons/' + social.imagePath + ');'"
-          ></div>
-        </a>
-      </div>
+<!--      <div class="social-media-icons">-->
+<!--        <a-->
+<!--            class="social-media-icon nft-social-link"-->
+<!--            v-for="social in socials"-->
+<!--            v-bind:href="social.link"-->
+<!--            v-bind:title="social.title"-->
+<!--            target="_blank"-->
+<!--            rel="nofollow"-->
+<!--        >-->
+<!--          <div-->
+<!--              class="social-icon"-->
+<!--              v-bind:style="'background-image: url(assets/images/socialIcons/' + social.imagePath + ');'"-->
+<!--          ></div>-->
+<!--        </a>-->
+<!--      </div>-->
     </div>
 
-    <div class="social-airdrop" id="trud-token">
-      <div class="airdrop-title">
-        <h2>NFT collectors will receive
-          an Airdrop of the project
-          token after the sale
-          of the historical collection.</h2>
-      </div>
+<!--    <div class="social-airdrop" id="trud-token">-->
+<!--      <div class="airdrop-title">-->
+<!--        <h2>NFT collectors will receive-->
+<!--          an Airdrop of the project-->
+<!--          token after the sale-->
+<!--          of the historical collection.</h2>-->
+<!--      </div>-->
 
-      <div class="airdrop-text">
-        <h3>TRUD token is used to reward
-          people for specific actions. All
-          operating revenue of the project
-          in full goes into the liquidity
-          of the token.  When the price
-          of token is at its minimum, participants
-          receive more token for their
-          work. As soon as the products
-          created by them start to make
-          a profit, it is completely spent
-          on buying back the TRUD token - its
-          value is growing. Therefore, getting
-          the previous number of coins
-          for the same action
-          becoming not possible.</h3>
-      </div>
-    </div>
+<!--      <div class="airdrop-text">-->
+<!--        <h3>TRUD token is used to reward-->
+<!--          people for specific actions. All-->
+<!--          operating revenue of the project-->
+<!--          in full goes into the liquidity-->
+<!--          of the token.  When the price-->
+<!--          of token is at its minimum, participants-->
+<!--          receive more token for their-->
+<!--          work. As soon as the products-->
+<!--          created by them start to make-->
+<!--          a profit, it is completely spent-->
+<!--          on buying back the TRUD token - its-->
+<!--          value is growing. Therefore, getting-->
+<!--          the previous number of coins-->
+<!--          for the same action-->
+<!--          becoming not possible.</h3>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="social-diagram">
-      <ul class="diagram-coords">
-        <li class="Y-coord">
-          <h5>1,000,000,000</h5>
-          <hr>
-        </li>
+<!--    <div class="social-diagram">-->
+<!--      <ul class="diagram-coords">-->
+<!--        <li class="Y-coord">-->
+<!--          <h5>1,000,000,000</h5>-->
+<!--          <hr>-->
+<!--        </li>-->
 
-        <li class="Y-coord">
-          <h5>800,000,000</h5>
-          <hr>
-        </li>
+<!--        <li class="Y-coord">-->
+<!--          <h5>800,000,000</h5>-->
+<!--          <hr>-->
+<!--        </li>-->
 
-        <li class="Y-coord">
-          <h5>600,000,000</h5>
-          <hr>
-        </li>
+<!--        <li class="Y-coord">-->
+<!--          <h5>600,000,000</h5>-->
+<!--          <hr>-->
+<!--        </li>-->
 
-        <li class="Y-coord">
-          <h5>400,000,000</h5>
-          <hr>
-        </li>
+<!--        <li class="Y-coord">-->
+<!--          <h5>400,000,000</h5>-->
+<!--          <hr>-->
+<!--        </li>-->
 
-        <li class="Y-coord">
-          <h5>200,000,000</h5>
-          <hr>
-        </li>
+<!--        <li class="Y-coord">-->
+<!--          <h5>200,000,000</h5>-->
+<!--          <hr>-->
+<!--        </li>-->
 
-        <li class="X-coords">
-          <h5>0</h5>
+<!--        <li class="X-coords">-->
+<!--          <h5>0</h5>-->
 
-          <h5>12 mo</h5>
+<!--          <h5>12 mo</h5>-->
 
-          <h5>24 mo</h5>
+<!--          <h5>24 mo</h5>-->
 
-          <h5>36 mo</h5>
+<!--          <h5>36 mo</h5>-->
 
-          <h5>48 mo</h5>
+<!--          <h5>48 mo</h5>-->
 
-          <h5>60 mo</h5>
-        </li>
-      </ul>
+<!--          <h5>60 mo</h5>-->
+<!--        </li>-->
+<!--      </ul>-->
 
-      <div class="diagram-image-cont">
-        <div class="diagram-image"></div>
-      </div>
-    </div>
+<!--      <div class="diagram-image-cont">-->
+<!--        <div class="diagram-image"></div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <div class="social-trud-token">
-      <h3>By 200.000.000 tokens are
-        released into circulation
-        every year in the first 5 years.</h3><br>
+<!--    <div class="social-trud-token">-->
+<!--      <h3>By 200.000.000 tokens are-->
+<!--        released into circulation-->
+<!--        every year in the first 5 years.</h3><br>-->
 
-      <h3>Total amount: 1.000.000.000</h3><br>
+<!--      <h3>Total amount: 1.000.000.000</h3><br>-->
 
-      <h3>Collectors will have the opportunity
-        to stake TRUD token.</h3><br>
+<!--      <h3>Collectors will have the opportunity-->
+<!--        to stake TRUD token.</h3><br>-->
 
-      <h3>1 NFT opens access to token staking
-        at 10% per year, each subsequent
-        NFT increases APY by 1%.</h3>
-    </div>
+<!--      <h3>1 NFT opens access to token staking-->
+<!--        at 10% per year, each subsequent-->
+<!--        NFT increases APY by 1%.</h3>-->
+<!--    </div>-->
   </div>
 </template>
 
 <script>
-import {socials} from "../social-list/index.js";
+import { socials } from "../social-list/index.js";
 
 export default {
   name: "nft-main-social-network",
   data() {
     return {
-      socials
+      socials,
     }
-  }
+  },
 }
 </script>
 
@@ -159,6 +196,12 @@ export default {
     gap: 70px
     max-width: 1430px
     width: 100%
+
+    @media (min-width: $bigScreenStart)
+      padding: 0 60px
+
+    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      padding: 0 8px
 
     .social-launch-networks
       display: flex
@@ -205,7 +248,7 @@ export default {
 
         .launch-networks-images
           display: flex
-          align-items: flex-end
+          align-items: center
           justify-content: center
           width: 100%
           position: relative
@@ -335,7 +378,7 @@ export default {
         display: flex
         flex-direction: column
         gap: 77px
-        
+
         .Y-coord
           display: flex
           align-items: center
