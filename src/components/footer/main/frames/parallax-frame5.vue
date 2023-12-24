@@ -19,6 +19,12 @@ export default defineComponent({
       },
     },
   },
+
+  methods: {
+    buttonClick() {
+      window.open("https://www.okx.com/ru/web3/marketplace/nft/collection/btc/historical-collection-1", "_blank")
+    },
+  },
 })
 </script>
 
@@ -52,7 +58,7 @@ export default defineComponent({
         but you and I - people!
       </div>
 
-      <div class="button">
+      <div class="button" @click="buttonClick">
         <span>OKX Marketplace</span>
       </div>
     </main>

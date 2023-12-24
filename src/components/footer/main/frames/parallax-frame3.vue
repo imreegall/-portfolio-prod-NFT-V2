@@ -214,7 +214,7 @@ export default defineComponent({
                 'icon-large': icon.size >= 100,
             }"
             :style="{
-              backgroundImage: `url(/public/assets/images/frame3/icons/${ index + 1 }.png)`,
+              backgroundImage: `url(/assets/images/frame3/icons/${ index + 1 }.png)`,
               animationDuration: `${ 8 + (index + 1) % 5 }s`
           }"
         ></div>

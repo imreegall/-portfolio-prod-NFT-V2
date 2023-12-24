@@ -14,7 +14,7 @@
         >
           <div
               class="social-item"
-              v-bind:style="'background-image: url(assets/images/socialIcons/' + social.imagePath + ');'"
+              v-bind:style="'background-image: url(/assets/images/socialIcons/' + social.imagePath + ');'"
           ></div>
         </a>
       </div>
@@ -53,16 +53,16 @@ export default {
     display: flex
     flex-direction: column
     align-items: center
-    max-width: 1290px
     width: 100%
 
     @media (min-width: $bigScreenStart)
-      $padding: 60px
-      padding: 140px $padding 100px
+      padding: 140px 60px 100px
+      max-width: calc(1290px + 60px * 2)
       gap: 20px
 
     @media (max-width: $smallScreenEnd), (any-pointer: coarse)
       padding: 35px 0 30px
+      max-width: 1290px
       gap: 32px
 
     .footer-info
@@ -102,7 +102,7 @@ export default {
 
         @media (max-width: $smallScreenEnd), (any-pointer: coarse)
           gap: 24px
-          max-width: calc(40px * 3 + 24px * 2)
+          max-width: calc(40px * 4 + 24px * 3)
 
         .social-item-cont
           width: 40px

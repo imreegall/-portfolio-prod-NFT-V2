@@ -6,6 +6,13 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "VujahdayScript";
+  src: local("VujahdayScript Regular"), local("VujahdayScript-Regular"), url("/public/assets/fonts/VujahdayScript/VujahdayScript-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: Raleway;
   src: url("/src/assets/fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
   font-weight: 1 999;
@@ -20,13 +27,20 @@ h1 {
   font-weight: 800;
   line-height: 130%;
 }
+
+h6 {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+}
 @media (min-width: 1280px) {
-  h1 {
+  h6 {
     font-size: 28px;
   }
 }
 @media (max-width: 1279px) {
-  h1 {
+  h6 {
     font-size: 21px;
   }
 }
@@ -105,6 +119,18 @@ body {
   background-color: #141A28;
 }
 
+@media (min-width: 1280px) {
+  .only-mb {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1279px), (any-pointer: coarse) {
+  .only-ds {
+    display: none !important;
+  }
+}
+
 .lighthouse {
   position: absolute;
   background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%);
@@ -116,7 +142,7 @@ body {
 .lighthouse-small {
   position: absolute;
   background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%);
-  width: 800px;
+  width: 100%;
   height: 800px;
   z-index: -1;
 }

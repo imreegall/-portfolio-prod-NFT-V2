@@ -28,9 +28,30 @@
   },
 
   {
+    "name": "Reddit",
+    "imagePath": "reddit.svg",
+    "link": "https://www.reddit.com/user/TRUDtoken",
+    "title": "https://www.reddit.com/user/TRUDtoken"
+  },
+
+  {
     "name": "Discord",
     "imagePath": "discord.svg",
     "link": "https://discord.gg/historicalcollection",
     "title": "https://discord.gg/historicalcollection"
+  },
+
+  {
+    "name": "Medium",
+    "imagePath": "medium.svg",
+    "link": "https://medium.com/@historicalcollectionart",
+    "title": "https://medium.com/@historicalcollectionart"
+  },
+
+  {
+    "name": "Telegram",
+    "imagePath": "telegram.svg",
+    "link": "https://t.me/historicalcollection",
+    "title": "https://t.me/historicalcollection"
   }
 ]

@@ -12,6 +12,14 @@
 body
   background-color: $mainBackground
 
+.only-mb
+  @media (min-width: $bigScreenStart)
+    display: none !important
+
+.only-ds
+  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    display: none !important
+
 .lighthouse
   position: absolute
   background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%)
@@ -22,7 +30,7 @@ body
 .lighthouse-small
   position: absolute
   background: radial-gradient(closest-side, rgba(0, 251, 160, 0.11), rgba(0, 251, 160, 0.08) 30%, rgba(20, 26, 40, 0) 100%)
-  width: 800px
+  width: 100%
   height: 800px
   z-index: -1
 

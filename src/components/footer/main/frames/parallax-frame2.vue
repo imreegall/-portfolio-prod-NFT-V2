@@ -265,7 +265,7 @@ export default defineComponent({
                 'ape-large': ape.size >= 100,
             }"
             :style="{
-              backgroundImage: `url(/public/assets/images/frame2/apes/${ index + 1 }.png)`,
+              backgroundImage: `url(/assets/images/frame2/apes/${ index + 1 }.png)`,
               animationDuration: `${ 8 + (index + 1) % 5 }s`,
           }"
         ></div>

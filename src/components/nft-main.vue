@@ -11,6 +11,8 @@
 <!--    <nft-main-roadmap/>-->
 <!--    <nft-main-team/>-->
 <!--    <nft-main-model/>-->
+
+<!--    <nft-main-auction />-->
   </div>
 </template>
 

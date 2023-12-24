@@ -137,7 +137,7 @@ export default defineComponent({
       <div
           class="icon"
           :style="{
-              backgroundImage: `url(/public/assets/images/frame4/icons/${ index + 1 }.png)`,
+              backgroundImage: `url(/assets/images/frame4/icons/${ index + 1 }.png)`,
           }"
       ></div>
     </div>
