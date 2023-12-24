@@ -34,11 +34,17 @@ export default defineComponent({
       highestBid: null,
       tryToStartAuctionResult: null,
       tryToEndAuctionResult: null,
+
+      lots,
+
+      tryToBid: false,
     }
   },
 
   mounted() {
-    console.log()
+    setInterval(async () => {
+      await this.handleGetHighestBidButtonClick()
+    }, 500)
   },
 
   methods: {
@@ -67,18 +73,15 @@ export default defineComponent({
     },
 
     async handleBidButtonClick() {
-      this.tryToBidResult = null
-
-      if (this.highestBid === null) {
-        this.tryToBidResult = "Check highest bid before!"
-
+      if (this.tryToBid) {
         return
       }
 
-      console.log('Try to bid...')
-      const result = await this.$refs.walletConnector.doBid(Math.max(Number(this.highestBid) + 100000, 1000000))
-      this.tryToBidResult = result ? (result.hash ? "success" : result) : "error"
-      console.log('Bid result:', this.tryToBidResult)
+      this.tryToBid = true
+
+      await this.$refs.walletConnector.doBid().then(() => {
+        this.tryToBid = false
+      })
     },
 
     async handleCheckAuctionIsActiveButtonClick() {
@@ -87,7 +90,6 @@ export default defineComponent({
     },
 
     async handleGetHighestBidButtonClick() {
-      this.highestBid = null
       this.highestBid = ((await this.$refs.walletConnector.getHighestBid()) / BigInt(1000000000)).toString()
     },
 
@@ -111,6 +113,18 @@ export default defineComponent({
       }
 
       return this.address.substring(0, 4) + "..." + this.address.substring(this.address.length - 2, this.address.length)
+    },
+
+    activeLot() {
+      return lots.filter(lot => lot.status === "Active")[0]
+    }
+  },
+
+  watch: {
+    highestBid: {
+      handler(highestBid) {
+        this.activeLot.lastBid = highestBid
+      },
     },
   },
 })

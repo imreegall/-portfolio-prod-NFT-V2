@@ -155,19 +155,21 @@ export default defineComponent({
   <div
       class="parallax-frame3"
   >
-    <main
-        :style="{
-            filter: `brightness(${ 100 * (1 / Math.cbrt(iconsOffsetBefore)) }%)`,
-        }"
-    >
-      <div class="background"></div>
+<!--    <main-->
+<!--        :style="{-->
+<!--            filter: `brightness(${ 100 * (1 / Math.cbrt(iconsOffsetBefore)) }%)`,-->
+<!--        }"-->
+<!--    >-->
+<!--      <div class="background"></div>-->
 
-      <div
-          class="explode"
-          :style="{
-            filter: `opacity(${ 1 - Math.cbrt(Math.cbrt(iconsOffsetBefore)) })`,
-        }"
-      ></div>
+<!--      <div-->
+<!--          class="explode"-->
+<!--          :style="{-->
+<!--            filter: `opacity(${ 1 - Math.cbrt(Math.cbrt(iconsOffsetBefore)) })`,-->
+<!--        }"-->
+<!--      ></div>-->
+    <main>
+      <div class="background"></div>
 
       <div class="text">
         We invite you to pay close attention

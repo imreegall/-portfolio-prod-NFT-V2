@@ -180,7 +180,7 @@ export default defineComponent({
             <h2 class="title only-ds">Current rate</h2>
 
             <div class="cost">
-              <h2 class="number">2300000</h2>
+              <h2 class="number">{{ nftObject.lastBid }}</h2>
 
               <h4 class="text">TRUD</h4>
             </div>
@@ -292,7 +292,7 @@ export default defineComponent({
 
             <h2 class="title">Burned:</h2>
 
-            <h2 class="number">2300000</h2>
+            <h2 class="number">{{ nftObject.lastBid }}</h2>
 
             <h4 class="value">TRUD</h4>
           </div>

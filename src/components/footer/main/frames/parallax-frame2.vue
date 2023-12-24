@@ -212,19 +212,21 @@ export default defineComponent({
   <div
       class="parallax-frame2"
   >
-    <main
-        :style="{
-            filter: `brightness(${ 100 * (1 / Math.cbrt(apesOffsetAfter)) }%)`,
-        }"
-    >
-      <div class="background"></div>
+<!--    <main-->
+<!--        :style="{-->
+<!--            filter: `brightness(${ 100 * (1 / Math.cbrt(apesOffsetAfter)) }%)`,-->
+<!--        }"-->
+<!--    >-->
+<!--      <div class="background"></div>-->
 
-      <div
-          class="explode"
-          :style="{
-            filter: `opacity(${ 1 - Math.cbrt(Math.cbrt(apesOffsetAfter)) })`,
-        }"
-      ></div>
+<!--      <div-->
+<!--          class="explode"-->
+<!--          :style="{-->
+<!--            filter: `opacity(${ 1 - Math.cbrt(Math.cbrt(apesOffsetAfter)) })`,-->
+<!--        }"-->
+<!--      ></div>-->
+    <main>
+      <div class="background"></div>
 
       <div class="text">
         Over the entire existence of NFTs,

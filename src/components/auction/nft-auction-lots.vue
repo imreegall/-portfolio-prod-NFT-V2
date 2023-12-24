@@ -99,6 +99,7 @@ export default defineComponent({
                 <div
                     class="button button-bid"
                     v-if="lot.status === 'Active'"
+                    @click="$router.push({ name: 'nft', params: { id: lot.id } })"
                 >
                   <h2>PLACE A BID</h2>
                 </div>
@@ -196,7 +197,7 @@ export default defineComponent({
                   class="title"
               >Hiest Bid</h2>
 
-              <h2 v-if="lot.status !== 'Upcoming'" class="cost"><span class="number">1700000</span> <br class="only-ds"> TRUD</h2>
+              <h2 v-if="lot.status !== 'Upcoming'" class="cost"><span class="number">{{ lot.lastBid }}</span> <br class="only-ds"> TRUD</h2>
 
               <div v-else class="upcoming only-ds">
                 <h2 class="title">Auction start at</h2>

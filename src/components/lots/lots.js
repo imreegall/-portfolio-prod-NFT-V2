@@ -1,12 +1,12 @@
 import nftList from "../nfts-list/nft-list.js";
 
 export default [
-    {
-        id: "test",
-        nft: nftList.test,
-        status: "Active",
-        date: "31.12.2023",
-    },
+    // {
+    //     id: "test",
+    //     nft: nftList.test,
+    //     status: "Active",
+    //     date: "31.12.2023",
+    // },
 
     {
         id: "25ca24bb-2e10-4630-b6ba-6480392b258b",
@@ -19,8 +19,8 @@ export default [
         id: "22a57078-95da-477d-af6e-08cf5b231925",
         nft: nftList.AlbertEinstein,
         status: "Active",
-        lastBid: 1700000,
-        lastAddress: "Ox1234512345123451234512345123451234512345",
+        lastBid: null,
+        lastAddress: null,
     },
 
     {

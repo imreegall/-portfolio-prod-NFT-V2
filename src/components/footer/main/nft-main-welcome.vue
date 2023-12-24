@@ -54,9 +54,9 @@
 
         <h2><a
             class="nft-button content-button"
-            href="https://magiceden.io/ordinals/marketplace/historical"
+            href="https://www.okx.com/ru/web3/marketplace/nft/collection/btc/historical-collection-1"
             target="_blank"
-        >View Collection</a></h2>
+        >OKX marketplace</a></h2>
       </div>
     </div>
   </div>

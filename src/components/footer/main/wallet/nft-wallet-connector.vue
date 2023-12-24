@@ -8,6 +8,8 @@ import {
   useWeb3ModalEvents,
 } from '@web3modal/wagmi/vue'
 
+import {getChainId} from "web3modal";
+
 import { getAccount, readContract, getWalletClient, writeContract } from "@wagmi/core";
 
 import { mainnet, arbitrum, goerli } from 'viem/chains'
@@ -101,7 +103,7 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'allowance',
-          args: ["0x1440c89A203948B638108E0285CCB17A15bAa143", "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"],
+          args: [account.address, "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"],
           chainId: 0,
         })
       } catch(e) {
@@ -150,19 +152,44 @@ export default defineComponent({
     const auctionContractAddress = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7";
     const auctionContractAbi = abiAuction.data
 
-    async function doBid(amount) {
+    async function doBid() {
       try {
-        const { account } = await getWalletClient()
+        let account
+
+        try {
+          const walletClient = await getWalletClient()
+
+          account = walletClient.account
+
+          if (!account) {
+            await openModal()
+
+            return
+          }
+        } catch(e) {
+          await openModal()
+
+          return
+        }
+
+        const allowanceAmount = BigInt(await checkApprove())
+
+        const bidAmount = BigInt(await getHighestBid()) + BigInt(100000000000000) < BigInt(1000000000000000) ? BigInt(1000000000000000) : BigInt(await getHighestBid()) + BigInt(100000000000000)
+
+        if (bidAmount > allowanceAmount) {
+          await doApprove()
+        }
 
         return await writeContract({
           address: auctionContractAddress,
           abi: auctionContractAbi,
           functionName: 'bid',
-          args: [amount * 1000000000],
+          args: [BigInt(await getHighestBid()) + BigInt(100000000000000) < BigInt(1000000000000000) ? BigInt(1000000000000000) : BigInt(await getHighestBid()) + BigInt(100000000000000)],
           account
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        // console.log('error:', e?.cause?.reason)
+        console.log('error:', e)
 
         return e?.cause?.reason
       }

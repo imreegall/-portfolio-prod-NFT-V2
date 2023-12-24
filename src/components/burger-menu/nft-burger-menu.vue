@@ -69,7 +69,7 @@ export default defineComponent({
 
       <h2 @click="handleLinkClick('https://trud.family/')">TRUD Token</h2>
 
-      <h2 @click="handleSoonButtonClick">Collection</h2>
+      <h2 @click="handleLinkClick('https://www.okx.com/ru/web3/marketplace/nft/collection/btc/historical-collection-1')">Collection</h2>
     </nav>
 
     <div class="buttons-wrapper">
