@@ -223,7 +223,7 @@ export default defineComponent({
 
         <template v-if="nftObject.status === 'Active'">
           <div class="bid">
-            <h2 class="title only-mb">Hiest Bid</h2>
+            <h2 class="title only-mb">Highest Bid</h2>
             <h2 class="title only-ds">Current rate</h2>
 
             <div class="cost">

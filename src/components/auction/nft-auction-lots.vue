@@ -196,7 +196,7 @@ export default defineComponent({
               <h2
                   v-if="lot.status === 'Active'"
                   class="title"
-              >Hiest Bid</h2>
+              >Highest Bid</h2>
 
               <h2 v-if="lot.status !== 'Upcoming'" class="cost"><span class="number">{{ lot.lastBid }}</span> <br class="only-ds"> TRUD</h2>
 
@@ -370,7 +370,7 @@ export default defineComponent({
               <h2
                   v-if="lot.status === 'Active'"
                   class="title"
-              >Hiest Bid</h2>
+              >Highest Bid</h2>
 
               <h2 v-if="lot.status !== 'Upcoming'" class="cost"><span class="number">{{ lot.lastBid }}</span> <br class="only-ds"> TRUD</h2>
 
