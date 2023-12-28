@@ -22,50 +22,38 @@ export default defineComponent({
 
   setup(props, { emit }) {
     // const chains = [mainnet, arbitrum]
-    const chains = [mainnet, arbitrum, goerli]
+    const chains = [mainnet, arbitrum]
 
     // const projectId = '94220bbc13162157cb0a4c2b954f3904'
     const projectId = '821914902d6ca5c70b7e0512e316fcbd'
 
-    // const metadata = {
-    //   name: 'TRUD',
-    //   description: 'TRUD family.',
-    //   url: 'https://trud.family',
-    //   icons: ['https://trud.family/img/trud.d0eb6c11.png']
-    // }
     const metadata = {
-      name: 'Web3Modal',
-      description: 'Web3Modal Example',
-      url: 'https://web3modal.com',
-      icons: ['https://avatars.githubusercontent.com/u/37784886']
+      name: 'TRUD',
+      description: 'TRUD family.',
+      url: 'https://trud.family',
+      icons: ['https://trud.family/img/trud.d0eb6c11.png']
     }
 
-    // const wagmiConfig = defaultWagmiConfig({
-    //   projectId,
-    //   chains,
-    //   metadata
-    // })
     const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
 
-    // createWeb3Modal({
-    //   wagmiConfig,
-    //   projectId,
-    //   chains,
-    //   featuredWalletIds: [
-    //     'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
-    //     '4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0',
-    //     'fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa',
-    //   ],
-    //   tokens: {
-    //     1: {
-    //       address: '0x2e7729f4e4aa8e68d13830d372f975046d4a498f',
-    //     },
-    //     2: {
-    //       address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
-    //     },
-    //   },
-    // })
-    createWeb3Modal({ wagmiConfig, projectId, chains })
+    createWeb3Modal({
+      wagmiConfig,
+      projectId,
+      chains,
+      featuredWalletIds: [
+        'c57ca95b47569778a828d19178114f4db188b89b763c899ba0be274e97267d96',
+        '4622a2b2d6af1c9844944291e5e7351a6aa24cd7b23099efac1b2fd875da31a0',
+        'fd20dc426fb37566d803205b19bbc1d4096b248ac04548e3cfb6b3a38bd033aa',
+      ],
+      tokens: {
+        1: {
+          address: '0x2e7729f4e4aa8e68d13830d372f975046d4a498f',
+        },
+        2: {
+          address: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+        },
+      },
+    })
 
     const modal = useWeb3Modal()
     const events = useWeb3ModalEvents()
@@ -92,7 +80,7 @@ export default defineComponent({
       await modal.open()
     }
 
-    const tokenContractAddress = "0x604B803d94fb49D039cED8A18989b5F39D81D281";
+    const tokenContractAddress = "0x2e7729f4E4AA8E68D13830D372F975046d4a498F";
     const tokenContractAbi = abiToken.data
 
     async function checkApprove() {
@@ -104,10 +92,10 @@ export default defineComponent({
           abi: tokenContractAbi,
           functionName: 'allowance',
           args: [account.address, "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"],
-          chainId: 0,
+          chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('error:', e)
 
         return e?.cause?.reason
       }
@@ -122,7 +110,7 @@ export default defineComponent({
           abi: tokenContractAbi,
           functionName: 'approve',
           args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
-          chainId: 0,
+          chainId: 1,
         })
       } catch(e) {
         console.log('error:', e?.cause?.reason)
@@ -133,14 +121,14 @@ export default defineComponent({
 
     async function doApprove() {
       try {
-        const amount = (BigInt(10000000) * BigInt(1000000000)).toString()
+        const amount = (BigInt(1000000000) * BigInt(1000000000)).toString()
 
         return await writeContract({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'approve',
           args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
-          chainId: 0,
+          chainId: 1,
         })
       } catch(e) {
         console.log('error:', e?.cause?.reason)
@@ -150,14 +138,17 @@ export default defineComponent({
     }
 
     const auctionContractAddress = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7";
+    // const auctionContractAddress = "0x2e7729f4E4AA8E68D13830D372F975046d4a498F";
     const auctionContractAbi = abiAuction.data
 
-    async function doBid() {
+    async function doBid(betValue) {
       try {
         let account
 
         try {
           const walletClient = await getWalletClient()
+
+          console.log("client:", walletClient)
 
           account = walletClient.account
 
@@ -172,19 +163,37 @@ export default defineComponent({
           return
         }
 
+        if (betValue < 1000000) {
+          alert("The minimum bet is 1,000,000 TRUD tokens")
+        }
+
         const allowanceAmount = BigInt(await checkApprove())
 
-        const bidAmount = BigInt(await getHighestBid()) + BigInt(100000000000000) < BigInt(1000000000000000) ? BigInt(1000000000000000) : BigInt(await getHighestBid()) + BigInt(100000000000000)
+        console.log("allowanceAmount:", allowanceAmount / BigInt(10 ** 9))
 
-        if (bidAmount > allowanceAmount) {
+        const highestBid = BigInt(await getHighestBid())
+
+        console.log("highestBid:", highestBid / BigInt(10 ** 9))
+
+        const bet = BigInt(betValue * 10 ** 9)
+
+        console.log("bet:", bet / BigInt(10 ** 9))
+
+        if (bet <= highestBid) {
+          return
+        }
+
+        if (bet > allowanceAmount) {
           await doApprove()
+
+          return
         }
 
         return await writeContract({
           address: auctionContractAddress,
           abi: auctionContractAbi,
           functionName: 'bid',
-          args: [BigInt(await getHighestBid()) + BigInt(100000000000000) < BigInt(1000000000000000) ? BigInt(1000000000000000) : BigInt(await getHighestBid()) + BigInt(100000000000000)],
+          args: [bet.toString()],
           account
         })
       } catch(e) {
@@ -245,9 +254,10 @@ export default defineComponent({
           address: auctionContractAddress,
           abi: auctionContractAbi,
           functionName: 'highestBid',
+          chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('error:', e)
 
         return e?.cause?.reason
       }

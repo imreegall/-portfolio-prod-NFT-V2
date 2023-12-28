@@ -11,6 +11,13 @@ export default defineComponent({
   },
 
   props: {
+    address: {
+      type: String,
+      default() {
+        return null
+      },
+    },
+
     tryToCheckWalletApproveResult: {
       type: String,
       default() {
@@ -89,8 +96,8 @@ export default defineComponent({
       this.$emit('handleGetHighestBidButtonClick')
     },
 
-    handleBidButtonClick() {
-      this.$emit('handleBidButtonClick')
+    handleBidButtonClick(betValue) {
+      this.$emit('handleBidButtonClick', betValue)
     },
 
     handleStartAuctionButtonClick() {
@@ -109,6 +116,7 @@ export default defineComponent({
     <nft-auction-breadcrumbs />
 
     <router-view
+        :address="address"
         :tryToCheckWalletApproveResult="tryToCheckWalletApproveResult"
         :tryToRemoveApprovalResult="tryToRemoveApprovalResult"
         :tryToApproveResult="tryToApproveResult"

@@ -72,14 +72,14 @@ export default defineComponent({
       this.tryToApproveResult = result ? (result.hash ? "success" : result) : "error"
     },
 
-    async handleBidButtonClick() {
+    async handleBidButtonClick(betValue) {
       if (this.tryToBid) {
         return
       }
 
       this.tryToBid = true
 
-      await this.$refs.walletConnector.doBid().then(() => {
+      await this.$refs.walletConnector.doBid(betValue).then(() => {
         this.tryToBid = false
       })
     },
@@ -139,6 +139,7 @@ export default defineComponent({
     />
 
     <router-view
+        :address="address"
         :tryToCheckWalletApproveResult="tryToCheckWalletApproveResult"
         :tryToRemoveApprovalResult="tryToRemoveApprovalResult"
         :tryToApproveResult="tryToApproveResult"
