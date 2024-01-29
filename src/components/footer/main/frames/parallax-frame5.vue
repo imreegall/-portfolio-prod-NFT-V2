@@ -22,7 +22,7 @@ export default defineComponent({
 
   methods: {
     buttonClick() {
-      window.open("https://www.okx.com/ru/web3/marketplace/nft/collection/btc/historical-collection-1", "_blank")
+      window.open("https://historicalcollection.art/auction", "_blank")
     },
   },
 })
@@ -34,32 +34,19 @@ export default defineComponent({
 
     <main>
       <div class="text">
-        That's why we created the Legendary Historical
-        Collection for you! It consists of 1000
-        Bitcoin NFTs dedicated to historical
-        figures of the past. To those people
-        who left an unforgettable contribution
+        That's why we've created The Legendary Historical Collection just for you! It consists of 1,000 Bitcoin NFTs dedicated to historical figures of the past—individuals who made an unforgettable contribution to the development of humanity, countries, cultures, and nations. Let their stars forever shine brightly in the cosmic world of Bitcoin!
 
         <br><br>
 
-        in the development of humanity,
-        countries, cultures and peoples!
-        May their stars forever remain shining
-        brightly in the cosmic world of Bitcoin!
-        The Legendary Historical Collection will
-        be the most recognizable, dear
+        Over time, this collection is poised to become the most recognizable, valuable, and popular among all Bitcoin collections. We are humans, and that means Legend humans should take the top spot! Not beasts, fictional characters, or objects, but us - people!
 
         <br><br>
 
-        and popular among all Bitcoin collections.
-        We are humans, that means Legend humans
-        should come first! Not animals and stones,
-        not fictional characters and objects,
-        but you and I - people!
+        Let's celebrate the true legends who have left their mark on our world, as they deserve to be celebrated and remembered in the realm of Bitcoin NFTs.
       </div>
 
       <div class="button" @click="buttonClick">
-        <span>OKX Marketplace</span>
+        <span>Auction House</span>
       </div>
     </main>
   </div>

@@ -143,22 +143,15 @@ export default defineComponent({
     </div>
 
     <div class="text">
-      Each person has his own star,
-      his soul is connected to this star.
-      Also in the world of Bitcoin,
-      each image has its own satoshi,
-      to which it becomes forever tied!
+      Every person has their own star, their soul connected to that celestial body. Similarly, in the world of Bitcoin, every image is tied to its own Satoshi, forever bound.
 
       <br><br>
 
-      You can put photos of your loved
-      ones in their memory on the legendary
-      Bitcoin blockchain!
+      You can immortalize the photos of your loved ones in the legendary Bitcoin blockchain as a tribute to their memory.
 
       <br><br>
 
-      Isn't this what we've been waiting
-      for in the NFT world?
+      Isn't this what we've all been waiting for in the world of NFTs?
     </div>
   </div>
 </template>

@@ -229,20 +229,16 @@ export default defineComponent({
       <div class="background"></div>
 
       <div class="text">
-        Over the entire existence of NFTs,
-        we have seen many different
-        collections on a variety of blockchains.
+        For the entire time that NFTs have existed, we've seen a multitude of different collections across various blockchains. 
 
         <br><br>
 
-        All their images are stored on hosting sites;
-        the NFT itself is simply a link to this image.
-        If you delete the image from the hosting,
-        your token will become a dummy.
+        All of their images are stored on hosting services, with the NFT itself being nothing more than a link to that image. If you remove the image from the hosting service, your token becomes a hollow shell. 
+
 
         <br><br>
 
-        So what are you actually buying?
+        So, what are you really buying?
       </div>
 
       <div

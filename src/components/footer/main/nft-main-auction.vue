@@ -103,7 +103,7 @@ export default defineComponent({
         const contractAbi = this.abiToken.data
         this.contractTrudToken = new this.web3.eth.Contract(contractAbi, contractAddress);
 
-        const contractAddressAuc = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7";
+        const contractAddressAuc = "0x85afb98011552b980d2C6D61628Ec01d6De90716";
         const contractAbiAuc = this.abiAuction.data
         this.contractTrudAuction = new this.web3.eth.Contract(contractAbiAuc, contractAddressAuc);
 
@@ -123,7 +123,7 @@ export default defineComponent({
 
     async handleApprove() {
       try {
-        const addr1 = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"
+        const addr1 = "0x85afb98011552b980d2C6D61628Ec01d6De90716"
         const amount = (10000000 * 1000000000).toString()
         // const receipt = await this.contractTrudToken.methods.approve(addr1, amount).send({ from: this.account })
         const receipt = await this.contractTrudToken.methods.approve(addr1, amount).send({ from: "0x1440c89A203948B638108E0285CCB17A15bAa143" })
@@ -153,7 +153,7 @@ export default defineComponent({
         const contractAbi = this.abiToken.data
         const contractTrudToken = new this.web3.eth.Contract(contractAbi, contractAddress)
 
-        const addr1 = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"
+        const addr1 = "0x85afb98011552b980d2C6D61628Ec01d6De90716"
         const amount = (10000000 * 1000000000).toString()
         const receipt = await contractTrudToken.methods.approve(addr1, amount).send({ from: "0x1440c89A203948B638108E0285CCB17A15bAa143" })
 
@@ -183,7 +183,7 @@ export default defineComponent({
         // const contractAddress = "0x604B803d94fb49D039cED8A18989b5F39D81D281";
         // const contractAbi = this.abiToken.data
         //
-        // const spender = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"
+        // const spender = "0x85afb98011552b980d2C6D61628Ec01d6De90716"
         // const amount = (10000000 * 1000000000).toString()
         //
         //
@@ -221,7 +221,7 @@ export default defineComponent({
         this.errorMessages.push(err)
       }
 
-      // const addr1 = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"
+      // const addr1 = "0x85afb98011552b980d2C6D61628Ec01d6De90716"
       // const amount = (10000000 * 1000000000).toString()
       //
       // try {

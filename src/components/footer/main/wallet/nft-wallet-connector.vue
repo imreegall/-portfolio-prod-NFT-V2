@@ -91,7 +91,7 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'allowance',
-          args: [account.address, "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"],
+          args: [account.address, "0x85afb98011552b980d2C6D61628Ec01d6De90716"],
           chainId: 1,
         })
       } catch(e) {
@@ -109,7 +109,7 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'approve',
-          args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
+          args: ["0x85afb98011552b980d2C6D61628Ec01d6De90716", amount],
           chainId: 1,
         })
       } catch(e) {
@@ -127,7 +127,7 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'approve',
-          args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
+          args: ["0x85afb98011552b980d2C6D61628Ec01d6De90716", amount],
           chainId: 1,
         })
       } catch(e) {
@@ -137,7 +137,7 @@ export default defineComponent({
       }
     }
 
-    const auctionContractAddress = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7";
+    const auctionContractAddress = "0x85afb98011552b980d2C6D61628Ec01d6De90716";
     // const auctionContractAddress = "0x2e7729f4E4AA8E68D13830D372F975046d4a498F";
     const auctionContractAbi = abiAuction.data
 

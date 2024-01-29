@@ -66,34 +66,25 @@ export default {
 
     MarkTwain: {
         title: "Mark Twain",
-        description: "Mark Twain is best known for his novels, \"The Adventures of " +
-            "Tom Sawyer\" and \"Adventures of Huckleberry Finn,\" which are " +
-            "considered among the greatest works in American literature.<br><br>" +
-            "Twain grew up in Hannibal, Missouri, a town on the banks of the Mississippi " +
-            "River that inspired the settings for many of his stories. His childhood " +
-            "experiences along the river would later serve as the backdrop for his " +
-            "famous characters.<br><br>" +
-            "In addition to his novels, Twain wrote numerous short stories, essays, " +
-            "and travelogues that showcased his exceptional storytelling and witty style. " +
-            "Many of his works reflected his observations and criticisms of American " +
-            "society during the late 19th century.<br><br>" +
-            "Twain's writing often incorporated humor, satire, and social commentary, " +
-            "making him a celebrated literary figure and a voice for the common American. " +
-            "His distinctive writing style captured the essence of the American vernacular " +
-            "and greatly influenced subsequent generations of writers.<br><br>" +
-            "Throughout his career, Twain became renowned for his wit and wisdom, with " +
-            "many of his quotes and sayings still widely quoted today. He tackled various " +
-            "themes such as slavery, racism, morality, and the human condition, leaving a " +
-            "lasting impact on American literature.<br><br>" +
-            "Beyond his writing, Twain was an avid traveler and delivered lectures that " +
-            "entertained audiences with his humorous and insightful anecdotes. He embarked " +
-            "on a worldwide lecture tour to alleviate his financial troubles following some " +
-            "business ventures that didn't pan out as he had hoped.<br><br>" +
-            "Despite his success as a writer and lecturer, Twain faced personal struggles, " +
-            "including financial difficulties and the loss of his loved ones. However, his " +
-            "resilience and determination allowed him to continue writing until his death on " +
-            "April 21, 1910, in Redding, Connecticut",
+        description: `Mark Twain, born Samuel Langhorne Clemens, was born on November 30, 1835, in the small town of Florida, Missouri, USA. He was the sixth of seven children. At the age of four, his family moved to Hannibal, a town on the banks of the Mississippi River, which later became the setting for many of his works.<br><br>
+        In his youth, Twain worked as a printer and publisher, but he gained fame for his work as a steamboat pilot on the Mississippi River. The experiences he gained during these years were reflected in many of his works, including "Life on the Mississippi."<br><br>
+        After the Civil War in the USA, Twain began his writing career. His first major success came with the publication of "The Adventures of Tom Sawyer" in 1876. This was followed by "The Adventures of Huckleberry Finn" (1885) and "The Prince and the Pauper" (1881), which are considered classics of American literature.<br><br>
+        Twain was known for his sharp wit and skepticism towards social norms and politics. He spoke against imperialism and advocated for civil rights. In his personal life, he experienced tragedies, including the deaths of three of his four children and his wife.<br><br>
+        Towards the end of his life, Twain faced financial difficulties, but his lectures and public appearances helped support him financially. He passed away on April 21, 1910, leaving behind an extensive literary legacy that continues to inspire and entertain readers around the world.`,
         img: "Mark_Twain.png",
+        okxLink: "https://www.okx.com/ru/web3/marketplace/nft/asset/btc/1cf821340a74d345e61bf34cf0634fbb73c4bcd0d62cf25e7e1b0dc01231a111i0"
+    },
+
+    Tolkien: {
+        title: "J.R.R. Tolkien",
+        description: `J.R.R. Tolkien was born on January 3, 1892, in Bloemfontein, Orange Free State (now South Africa), to English colonial parents. When Tolkien was four years old, his family moved back to England, where his father soon passed away. Raised by his mother with his younger brother, she also died from diabetes, leaving both brothers as orphans.<br><br>
+        Tolkien was educated at King Edward's School, Birmingham, and later at Exeter College, Oxford University, where he studied English literature and languages, focusing particularly on Old English and medieval Welsh. His early love for languages and mythology was evident and significantly influenced his future works.<br><br>
+        During World War I, Tolkien served in the British Army and took part in the Battle of the Somme. These experiences deeply affected him and later reflected in his literary works. After the war, he began an academic career, first working at the English language and literature faculty at the University of Leeds, and then at Oxford.<br><br>
+        Tolkien began writing stories for his children, which eventually led to the creation of his famous works. "The Hobbit, or There and Back Again," published in 1937, became immediately popular. This was followed by his greatest work, the epic trilogy "The Lord of the Rings," written over many years and published in 1954-1955. These books had a profound impact on the fantasy genre and remain popular to this day.<br><br>
+        A unique feature of Tolkien's work is his creation of complex mythological worlds with their own languages, history, and culture. He was a talented linguist and developed several artificial languages, including the Elvish languages Quenya and Sindarin.<br><br>
+        Tolkien passed away on September 2, 1973, leaving behind a rich legacy that continues to inspire many writers and artists worldwide. His works have been adapted into highly successful films and continue to be a significant part of popular culture.`,
+        img: "J_R_R_Tolkien.png",
+        okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/9facf24e6b1eda24660714eddd6de9eb651ea27b3c1d0f88d0a01b1cf8b85a23i0"
     },
 
     test: {

@@ -285,7 +285,7 @@ export default defineComponent({
 
           <template v-else>
             <div class="button" @click="handleBidButtonClick">
-              <h2 v-if="address">Place a bet</h2>
+              <h2 v-if="address">Place a Bid</h2>
               <h2 v-else>Connect wallet</h2>
             </div>
 

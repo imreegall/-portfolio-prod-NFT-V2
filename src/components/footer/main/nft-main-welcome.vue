@@ -39,18 +39,17 @@
         </div>
 
         <div class="info-text">
-          <h3>The first collection dedicated
-            to legendary historical people. 1000 NFT
-            with a memorable artistic concept
-            will not leave anyone indifferent. Each NFT
-            is legendary and the only one painting
-            in the collection depicting
-            a historical figure of the past.</h3>
+          <h3>The Legendary Collection of 1,000 digital artifacts 
+            (NFTs) on the Bitcoin blockchain! Dedicated to legendary 
+            personalities in the history of humanity, countries, cultures, 
+            and nations!</h3>
+
+          <p class="info-text__under">* A decentralized charity NFT project for people.</p>
         </div>
       </div>
 
       <div class="welcome-buttons">
-        <h2><label class="content-button nft-button" for="checkbox-for-join">Join community</label></h2>
+        <!-- <h2><label class="content-button nft-button" for="checkbox-for-join">Join community</label></h2> -->
 
         <h2><a
             class="nft-button content-button"
@@ -234,6 +233,9 @@ export default {
 
           @media (max-width: $smallScreenEnd), (any-pointer: coarse)
             font-size: 16px
+          &__under
+            margin-top: 70px
+            opacity: 0.5
 
       .welcome-buttons
         display: flex
