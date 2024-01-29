@@ -61,7 +61,7 @@ export default {
             "struggle for equality and the importance of peaceful activism in " +
             "creating lasting change.",
         img: "Martin_Luther_King.png",
-        okxLink: "https://www.okx.com/ru/web3/marketplace/nft/asset/btc/aa48e4aa5626f24a278cdb691af004b8dd16ffb43d83e154476c17377e498e19i0",
+        okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/aa48e4aa5626f24a278cdb691af004b8dd16ffb43d83e154476c17377e498e19i0",
     },
 
     MarkTwain: {
@@ -94,6 +94,7 @@ export default {
             "resilience and determination allowed him to continue writing until his death on " +
             "April 21, 1910, in Redding, Connecticut",
         img: "Mark_Twain.png",
+        okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/1cf821340a74d345e61bf34cf0634fbb73c4bcd0d62cf25e7e1b0dc01231a111i0",
     },
 
     test: {

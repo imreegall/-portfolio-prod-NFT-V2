@@ -3,14 +3,12 @@
     <div class="social-launch-networks">
       <div class="launch-networks-content">
         <div class="launch-networks-text">
-          <h3>We have launched channels in all popular
-            social networks where we talk about interesting
-            historical facts related to legendary people
-            in the collection, a huge amount of content
-            and short video clips, each of which
-            has a mention of the project. With the growing
-            popularity of media resources,
-            the cost of NFT will increase. </h3>
+          <h3>We've launched channels on all popular social
+            networks where we share intriguing historical
+            facts about the legendary individuals featured
+            in the collection, offering a wealth of content,
+            each with a mention of the Bitcoin Historical
+            Collection. In this way, we pay tribute to our history.</h3>
 
 <!--          <h3>The Historical Collection is not just-->
 <!--            the first NFT collection with portraits-->
@@ -176,7 +174,7 @@
 </template>
 
 <script>
-import { socials } from "../social-list/index.js";
+import { socials } from "../footer/social-list/index.js";
 
 export default {
   name: "nft-main-social-network",

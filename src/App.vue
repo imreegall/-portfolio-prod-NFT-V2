@@ -6,9 +6,9 @@ import nftFooter from "./components/nft-footer.vue";
 
 import nftBurgerMenu from "./components/burger-menu/nft-burger-menu.vue";
 
-import nftWalletConnector from "./components/footer/main/wallet/nft-wallet-connector.vue";
+import nftWalletConnector from "./components/wallet/nft-wallet-connector.vue";
 
-import lots from "./components/lots/lots.js";
+import lots from "./components/auction/lots/lots.js";
 
 export default defineComponent({
   name: "App",
@@ -39,12 +39,6 @@ export default defineComponent({
 
       tryToBid: false,
     }
-  },
-
-  mounted() {
-    setInterval(async () => {
-      await this.handleGetHighestBidButtonClick()
-    }, 500)
   },
 
   methods: {
@@ -156,6 +150,7 @@ export default defineComponent({
         @handleGetHighestBidButtonClick="handleGetHighestBidButtonClick"
         @handleStartAuctionButtonClick="handleStartAuctionButtonClick"
         @handleEndAuctionButtonClick="handleEndAuctionButtonClick"
+        @updateLastBid="handleGetHighestBidButtonClick"
     />
 
     <nft-footer/>

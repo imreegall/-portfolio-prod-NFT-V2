@@ -1,7 +1,7 @@
 <script>
 import { defineComponent } from 'vue'
 
-import lots from "../lots/lots.js";
+import lots from "./lots/lots.js";
 
 export default defineComponent({
   name: "nft-auction-lots",

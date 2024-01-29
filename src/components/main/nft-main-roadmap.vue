@@ -6,7 +6,7 @@
 
     <div class="roadmap">
       <div class="roadmap-line">
-        <h2>2023</h2>
+        <h2>2024</h2>
 
         <div class="hr-cont">
           <hr>
@@ -18,11 +18,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Concept writing, collection
-                  creation, media networks
-                  launch and promotion, smart
-                  contract development, NFT
-                  minting.</h3>
+                <h3>Every day, all 366 days this year, we will be working on the Legendary Bitcoin Historical Collection</h3>
               </div>
 
               <div class="quarter-round">
@@ -35,7 +31,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Airdrop TRUD token. Development of a web-service for Ordinals. Launch of an advertising company.</h3>
+                <h3>We will promote the collection, create content, participate in exhibitions, do collaborations, hold an AMA, use the mem-token TRUD to promote the collection, use webtech, and whatever comes to mind</h3>
               </div>
 
               <div class="quarter-round">
@@ -47,13 +43,13 @@
 
           <div class="quarter-cont">
             <div class="quarter">
-              <div class="quarter-text">
-                <h3>Development of the application, adding the service to the AppStore and GooglePlay. Creating collectors club.</h3>
-              </div>
+<!--              <div class="quarter-text">-->
+<!--&lt;!&ndash;                <h3>Development of the application, adding the service to the AppStore and GooglePlay. Creating collectors club.</h3>&ndash;&gt;-->
+<!--              </div>-->
 
               <div class="quarter-round">
                 <h1>Q3</h1>
-                <div class="round-line"></div>
+<!--                <div class="round-line"></div>-->
               </div>
             </div>
           </div>
@@ -61,7 +57,7 @@
           <div class="quarter-cont">
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Participation in crypto forums and other thematic exhibitions.</h3>
+                <h3>We're not exactly sure where this will lead us. But let's embrace the journey and see where it takes us</h3>
               </div>
 
               <div class="quarter-round">
@@ -87,16 +83,15 @@ export default {
     display: flex
     flex-direction: column
     align-items: center
+    width: 100%
 
     @media (min-width: $bigScreenStart)
       max-width: 1430px
       padding-left: 70px
       padding-right: 70px
-      width: 100%
       gap: 50px
 
     @media (max-width: $smallScreenEnd), (any-pointer: coarse)
-      width: 100%
       padding-left: 12px
       padding-right: 12px
       max-width: 700px

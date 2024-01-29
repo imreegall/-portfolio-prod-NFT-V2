@@ -176,4 +176,55 @@ body {
   }
 }
 
+.green-text {
+  color: #1CC287;
+}
+.green-text.link:hover {
+  text-decoration: underline 1px solid #1CC287;
+}
+
+@keyframes imageLoadingRound {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.lazy-load-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+.lazy-load-image::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background-color: #2a2f3b;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.lazy-load-image::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 50%;
+  aspect-ratio: 1;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("/public/assets/images/svg/imageLoadingRound.svg");
+  animation: imageLoadingRound 3s linear infinite;
+  z-index: -1;
+  position: absolute;
+}
+
 /*# sourceMappingURL=style.css.map */

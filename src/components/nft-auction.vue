@@ -75,6 +75,10 @@ export default defineComponent({
     },
   },
 
+  mounted() {
+    this.loopUpdateLastBid()
+  },
+
   methods: {
     handleCheckWalletApproveButtonClick() {
       this.$emit('handleCheckWalletApproveButtonClick')
@@ -107,6 +111,14 @@ export default defineComponent({
     handleEndAuctionButtonClick() {
       this.$emit('handleEndAuctionButtonClick')
     },
+
+    loopUpdateLastBid() {
+      setTimeout(async () => {
+        await this.$emit('updateLastBid')
+
+        this.loopUpdateLastBid()
+      }, 500)
+    }
   },
 })
 </script>

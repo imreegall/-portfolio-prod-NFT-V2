@@ -29,7 +29,7 @@
     <hr>
 
     <div class="footer-patent">
-      <h4>© 2023 Historical Collection</h4>
+      <h4>© 2024 Historical Collection</h4>
     </div>
   </div>
 </template>

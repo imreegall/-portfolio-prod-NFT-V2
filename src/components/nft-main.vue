@@ -6,37 +6,35 @@
     </div>
 
     <nft-main-parallax />
-    <nft-main-social-network/>
-<!--    <nft-main-social-support/>-->
-<!--    <nft-main-roadmap/>-->
-<!--    <nft-main-team/>-->
-<!--    <nft-main-model/>-->
-
+    <nft-main-supply />
 <!--    <nft-main-auction />-->
+<!--    <nft-main-charity-mission />-->
+    <nft-main-roadmap/>
+    <nft-main-social-network/>
   </div>
 </template>
 
 <script>
-import nftMainWelcome from "./footer/main/nft-main-welcome.vue";
-import nftMainSocialNetwork from "./footer/main/nft-main-social-network.vue";
-import nftMainSocialSupport from "./footer/main/nft-main-social-support.vue";
-import nftMainTeam from "./footer/main/nft-main-team.vue";
-import nftMainCarousel from "./footer/main/nft-main-carousel.vue";
-import nftMainRoadmap from "./footer/main/nft-main-roadmap.vue";
-import nftMainModel from "./footer/main/nft-main-model.vue";
-import nftMainParallax from "./footer/main/nft-main-parallax.vue";
+import nftMainWelcome from "./main/nft-main-welcome.vue";
+import nftMainCarousel from "./main/nft-main-carousel.vue";
+import nftMainParallax from "./main/nft-main-parallax.vue";
+import nftMainSupply from "./main/nft-main-supply.vue";
+import nftMainAuction from "./main/nft-main-auction.vue";
+import nftMainCharityMission from "./main/nft-main-charity-mission.vue";
+import nftMainRoadmap from "./main/nft-main-roadmap.vue";
+import nftMainSocialNetwork from "./main/nft-main-social-network.vue";
 
 export default {
   name: "nft-main",
   components: {
     nftMainWelcome,
-    nftMainSocialNetwork,
-    nftMainSocialSupport,
-    nftMainTeam,
     nftMainCarousel,
-    nftMainRoadmap,
-    nftMainModel,
     nftMainParallax,
+    nftMainSupply,
+    nftMainAuction,
+    nftMainCharityMission,
+    nftMainRoadmap,
+    nftMainSocialNetwork,
   }
 }
 </script>

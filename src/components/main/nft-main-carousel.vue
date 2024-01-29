@@ -6,12 +6,10 @@
       >
         <ul class="lenta">
           <li
-              class="lenta-el"
+              class="lenta-el lazy-load-image"
               v-for="i in 27"
               v-bind:style="'background-image: url(/assets/images/carousel/' + n + '/' + (((i - 1) % 9) + 1) + '.jpg);'"
-          >
-
-          </li>
+          ></li>
         </ul>
       </li>
   </ul>

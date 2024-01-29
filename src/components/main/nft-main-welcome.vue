@@ -39,22 +39,22 @@
         </div>
 
         <div class="info-text">
-          <h3>The first collection dedicated
-            to legendary historical people. 1000 NFT
-            with a memorable artistic concept
-            will not leave anyone indifferent. Each NFT
-            is legendary and the only one painting
-            in the collection depicting
-            a historical figure of the past.</h3>
+          <h3>The Legendary Collection of 1,000
+            digital artifacts (NFTs) on the Bitcoin
+            blockchain! Dedicated to legendary
+            personalities in the history of humanity,
+            countries, cultures, and nations!</h3>
+        </div>
+
+        <div class="info-text desc">
+          <h3>* A decentralized charity NFT project for people.</h3>
         </div>
       </div>
 
       <div class="welcome-buttons">
-        <h2><label class="content-button nft-button" for="checkbox-for-join">Join community</label></h2>
-
         <h2><a
             class="nft-button content-button"
-            href="https://www.okx.com/ru/web3/marketplace/nft/collection/btc/historical-collection-1"
+            href="https://www.okx.com/web3/marketplace/nft/collection/btc/historical-collection-1"
             target="_blank"
         >OKX marketplace</a></h2>
       </div>
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import {socials} from "../social-list/index.js";
+import {socials} from "../footer/social-list/index.js";
 
 export default {
   name: "nft-main-welcome",
@@ -234,6 +234,9 @@ export default {
 
           @media (max-width: $smallScreenEnd), (any-pointer: coarse)
             font-size: 16px
+
+          &.desc
+            color: rgba(255, 255, 255, 0.60)
 
       .welcome-buttons
         display: flex
