@@ -36,27 +36,32 @@ export default defineComponent({
 
     <main>
       <div class="text">
-        That's why we've created The Legendary Historical
-        Collection just for you! It consists of 1,000 Bitcoin
-        NFTs dedicated to historical figures of the past—individuals
-        who made an unforgettable contribution to the development
-        of humanity, countries, cultures, and nations. Let
-        their stars forever shine brightly in the cosmic
+        That's why we've created The Legendary
+        Historical Collection just for you! It
+        consists of 1,000 Bitcoin NFTs dedicated
+        to historical figures of the past—individuals
+        who made an unforgettable contribution
+        to the development of humanity, countries,
+        cultures, and nations. Let their stars
+        forever shine brightly in the cosmic
         world of Bitcoin!
 
         <br><br>
 
-        Over time, this collection is poised to become the most
-        recognizable, valuable, and popular among all Bitcoin
-        collections. We are humans, and that means Legend humans
-        should take the top spot! Not beasts, fictional
-        characters, or objects, but us - people!
+        Over time, this collection is poised to
+        become the most recognizable, valuable,
+        and popular among all Bitcoin collections.
+        We are humans, and that means Legend
+        humans should take the top spot! Not
+        beasts, fictional characters, or
+        objects, but us - people!
 
         <br><br>
 
-        Let's celebrate the true legends who have left their
-        mark on our world, as they deserve to be celebrated
-        and remembered in the realm of Bitcoin NFTs.
+        Let's celebrate the true legends who
+        have left their mark on our world, as
+        they deserve to be celebrated and
+        remembered in the realm of Bitcoin NFTs.
       </div>
 
       <div class="button only-ds" @click="buttonClick">

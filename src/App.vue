@@ -48,10 +48,8 @@ export default defineComponent({
 
     async handleCheckWalletApproveButtonClick() {
       this.tryToCheckWalletApproveResult = null
-      console.log('Try to check approve...')
       const result = await this.$refs.walletConnector.checkApprove()
       this.tryToCheckWalletApproveResult = result ? (result.hash ? "success" : result) : "error"
-      console.log('Check approve result:', result)
     },
 
     async handleRemoveApprovalButtonClick() {

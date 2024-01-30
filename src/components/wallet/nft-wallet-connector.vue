@@ -8,24 +8,22 @@ import {
   useWeb3ModalEvents,
 } from '@web3modal/wagmi/vue'
 
-import {getChainId} from "web3modal";
+import {
+  getAccount,
+  readContract,
+  getWalletClient,
+  writeContract
+} from "@wagmi/core";
 
-import { getAccount, readContract, getWalletClient, writeContract } from "@wagmi/core";
-
-import { mainnet, arbitrum, goerli } from 'viem/chains'
-
-import abiAuction from './abiAuction.js';
-import abiToken from './abiToken.js';
+import { mainnet, arbitrum } from 'viem/chains'
 
 export default defineComponent({
   name: "nft-wallet-connector",
 
   setup(props, { emit }) {
-    // const chains = [mainnet, arbitrum]
     const chains = [mainnet, arbitrum]
 
-    // const projectId = '94220bbc13162157cb0a4c2b954f3904'
-    const projectId = '821914902d6ca5c70b7e0512e316fcbd'
+    const projectId = import.meta.env.VITE_WALLET_CONNECTOR_PROJECT_ID
 
     const metadata = {
       name: 'TRUD',
@@ -58,20 +56,10 @@ export default defineComponent({
     const modal = useWeb3Modal()
     const events = useWeb3ModalEvents()
 
-    let address = null
-
     watch(events, async () => {
       const account = await getAccount()
 
-      const newAddress = account.address || null
-
-      if (address === newAddress) {
-        return
-      }
-
-      address = newAddress
-
-      await emit('updateData', address)
+      await emit('updateData', account.address)
     }, {
       deep: true,
     })
@@ -80,8 +68,11 @@ export default defineComponent({
       await modal.open()
     }
 
-    const tokenContractAddress = "0x2e7729f4E4AA8E68D13830D372F975046d4a498F";
-    const tokenContractAbi = abiToken.data
+    const tokenContractAddress = import.meta.env.VITE_TOKEN_CONTRACT_ADDRESS
+    const tokenContractAbi = JSON.parse(import.meta.env.VITE_TOKEN_CONTRACT_ABI)
+
+    const auctionContractAddress = import.meta.env.VITE_AUCTION_CONTRACT_ADDRESS
+    const auctionContractAbi = JSON.parse(import.meta.env.VITE_AUCTION_CONTRACT_ABI)
 
     async function checkApprove() {
       try {
@@ -91,11 +82,11 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'allowance',
-          args: [account.address, "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7"],
+          args: [account.address, auctionContractAddress],
           chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e)
+        console.log('Checking Approve Error:', e)
 
         return e?.cause?.reason
       }
@@ -109,11 +100,11 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'approve',
-          args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
+          args: [auctionContractAddress, amount],
           chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('Removing Approve Error:', e)
 
         return e?.cause?.reason
       }
@@ -127,19 +118,15 @@ export default defineComponent({
           address: tokenContractAddress,
           abi: tokenContractAbi,
           functionName: 'approve',
-          args: ["0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7", amount],
+          args: [auctionContractAddress, amount],
           chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('Doing Approve Error:', e)
 
         return e?.cause?.reason
       }
     }
-
-    const auctionContractAddress = "0xd0eada520017b2C1E60fb7dCd49d51489c09c8F7";
-    // const auctionContractAddress = "0x2e7729f4E4AA8E68D13830D372F975046d4a498F";
-    const auctionContractAbi = abiAuction.data
 
     async function doBid(betValue) {
       try {
@@ -147,9 +134,6 @@ export default defineComponent({
 
         try {
           const walletClient = await getWalletClient()
-
-          console.log("client:", walletClient)
-
           account = walletClient.account
 
           if (!account) {
@@ -168,16 +152,8 @@ export default defineComponent({
         }
 
         const allowanceAmount = BigInt(await checkApprove())
-
-        console.log("allowanceAmount:", allowanceAmount / BigInt(10 ** 9))
-
         const highestBid = BigInt(await getHighestBid())
-
-        console.log("highestBid:", highestBid / BigInt(10 ** 9))
-
         const bet = BigInt(betValue * 10 ** 9)
-
-        console.log("bet:", bet / BigInt(10 ** 9))
 
         if (bet <= highestBid) {
           return
@@ -197,8 +173,7 @@ export default defineComponent({
           account
         })
       } catch(e) {
-        // console.log('error:', e?.cause?.reason)
-        console.log('error:', e)
+        console.log('Doing Bid Error:', e)
 
         return e?.cause?.reason
       }
@@ -213,7 +188,7 @@ export default defineComponent({
           args: []
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('Starting Error:', e)
 
         return e?.cause?.reason
       }
@@ -228,7 +203,7 @@ export default defineComponent({
           args: []
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('Stopping Error:', e)
 
         return e?.cause?.reason
       }
@@ -242,7 +217,7 @@ export default defineComponent({
           functionName: 'auctionActive',
         })
       } catch(e) {
-        console.log('error:', e?.cause?.reason)
+        console.log('Checking For Active Error:', e)
 
         return e?.cause?.reason
       }
@@ -257,7 +232,7 @@ export default defineComponent({
           chainId: 1,
         })
       } catch(e) {
-        console.log('error:', e)
+        console.log('Getting Highest Bid Error:', e)
 
         return e?.cause?.reason
       }
@@ -274,10 +249,6 @@ export default defineComponent({
       isActive,
       getHighestBid
     }
-  },
+  }
 })
 </script>
-
-<template>
-  <div class="nft-wallet-connector" />
-</template>

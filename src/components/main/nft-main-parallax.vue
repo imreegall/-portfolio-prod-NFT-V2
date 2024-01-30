@@ -42,8 +42,6 @@ export default defineComponent({
 
   methods: {
     calculateScreenHeight() {
-      console.log('MEGA EVENT')
-
       if (this.scrollTop < document.documentElement.scrollTop) {
         if (this.screenHeight === Math.max(window.innerHeight, this.screenHeight)) {
           window.removeEventListener('scroll', this.calculateScreenHeight)
@@ -61,8 +59,6 @@ export default defineComponent({
     },
 
     calculateScrollTop() {
-      console.log('SMALL EVENT')
-      
       this.scrollTop = document.documentElement.scrollTop
     },
   },
@@ -72,15 +68,6 @@ export default defineComponent({
       return (this.scrollTop - this.parallaxOffset) / this.screenHeight * 100
     },
   },
-
-  watch: {
-    vh: {
-      immediate: true,
-      handler(newVal) {
-        console.log('vh:', newVal)
-      }
-    }
-  }
 })
 </script>
 

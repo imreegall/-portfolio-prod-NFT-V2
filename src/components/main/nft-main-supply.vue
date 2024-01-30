@@ -18,8 +18,6 @@ export default defineComponent({
 
 <template>
   <div class="nft-main-supply">
-<!--    <h2 class="title">Саплай 1000 NFT</h2>-->
-
     <main>
       <div class="text">
         <h3
@@ -35,34 +33,22 @@ export default defineComponent({
 
 <style scoped lang="sass">
 .nft-main-supply
-  display: flex
-  flex-direction: column
-  align-items: center
   width: 100%
+  display: flex
 
   @media (min-width: $bigScreenStart)
     max-width: 1430px
     padding-left: 70px
     padding-right: 70px
-    gap: 50px
 
   @media (max-width: $smallScreenEnd), (any-pointer: coarse)
     max-width: 700px
-    gap: 20px
-
-  > .title
-    color: #F0FBF7
-
-    @media (min-width: $bigScreenStart)
-      font-size: 50px
-
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
-      font-size: 30px
 
   main
     display: flex
     align-items: center
     background-color: #101A33
+    width: 100%
 
     @media (min-width: $bigScreenStart)
       gap: 21px

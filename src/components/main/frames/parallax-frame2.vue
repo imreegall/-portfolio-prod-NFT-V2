@@ -400,11 +400,12 @@ export default defineComponent({
 
         <br><br>
 
-        All of their images are stored on hosting services,
-        with the NFT itself being nothing more than
-        a link to that image. If you remove the image
-        from the hosting service, your token becomes
-        a hollow shell.
+        All of their images are stored
+        on hosting services, with the NFT
+        itself being nothing more than a
+        link to that image. If you remove
+        the image from the hosting service,
+        your token becomes a hollow shell.
 
         <br><br>
 

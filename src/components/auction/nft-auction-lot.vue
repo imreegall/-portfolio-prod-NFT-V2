@@ -4,6 +4,8 @@ import { defineComponent } from 'vue'
 import lots from "./lots/lots.js";
 import nft404 from "../404/nft-404.vue";
 
+import getDayMonthYearFromDate from "../../functions/getDayMonthYearFromDate.js";
+
 export default defineComponent({
   name: "nft-auction-lot",
 
@@ -78,6 +80,8 @@ export default defineComponent({
 
   data() {
     return {
+      getDayMonthYearFromDate,
+
       account: "Ox1234512345123451234512345123451234512345",
 
       lots,
@@ -196,12 +200,16 @@ export default defineComponent({
       return this.nftObject === undefined
     },
 
+    lotStatus() {
+      return this.nftObject.status
+    },
+
     dateDifference() {
-      if (!this.nftObject.endDate) {
+      if (!this.nftObject.date) {
         return null
       }
 
-      const endDate = this.nftObject.endDate
+      const endDate = this.nftObject.date
 
       const datesDifference = endDate - this.currentDate
 
@@ -268,10 +276,10 @@ export default defineComponent({
       </div>
 
       <div class="price" v-if="nftObject.status === 'Upcoming' || nftObject.status === 'Active'">
-        <div v-if="nftObject.status === 'Upcoming'" class="plan">
+        <div v-if="lotStatus === 'Upcoming'" class="plan">
           <h2 class="title">Auction start at</h2>
 
-          <h2 v-html="nftObject.date" class="date" />
+          <h2 class="date">{{ getDayMonthYearFromDate(nftObject.date) }}</h2>
         </div>
 
         <template v-if="nftObject.status === 'Active'">
@@ -338,7 +346,7 @@ export default defineComponent({
 
           <template v-else>
             <div class="button" @click="handleBidButtonClick">
-              <h2 v-if="address">Place a bet</h2>
+              <h2 v-if="address">Place a Bid</h2>
               <h2 v-else>Connect wallet</h2>
             </div>
 
@@ -440,7 +448,7 @@ export default defineComponent({
       </div>
 
       <div
-          v-if="this.nftObject.endDate"
+          v-if="this.lotStatus === 'Active' && this.nftObject.date"
           class="end-date"
       >
         <h2 class="title">Auction ends in</h2>

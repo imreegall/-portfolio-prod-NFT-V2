@@ -3,11 +3,15 @@ import { defineComponent } from 'vue'
 
 import lots from "./lots/lots.js";
 
+import getDayMonthYearFromDate from "../../functions/getDayMonthYearFromDate.js";
+
 export default defineComponent({
   name: "nft-auction-lots",
 
   data() {
     return {
+      getDayMonthYearFromDate,
+
       account: "Ox1234512345123451234512345123451234512345",
 
       lots,
@@ -203,7 +207,7 @@ export default defineComponent({
               <div v-else class="upcoming">
                 <h2 class="title">Auction start at</h2>
 
-                <h2 class="date" v-html="lot.date" />
+                <h2 class="date">{{ getDayMonthYearFromDate(lot.date) }}</h2>
               </div>
             </div>
           </div>
@@ -377,7 +381,7 @@ export default defineComponent({
               <div v-else class="upcoming only-ds">
                 <h2 class="title">Auction start at</h2>
 
-                <h2 class="date" v-html="lot.date" />
+                <h2 class="date">{{ getDayMonthYearFromDate(lot.date) }}</h2>
               </div>
             </div>
           </div>

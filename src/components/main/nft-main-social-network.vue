@@ -3,12 +3,15 @@
     <div class="social-launch-networks">
       <div class="launch-networks-content">
         <div class="launch-networks-text">
-          <h3>We've launched channels on all popular social
-            networks where we share intriguing historical
-            facts about the legendary individuals featured
-            in the collection, offering a wealth of content,
-            each with a mention of the Bitcoin Historical
-            Collection. In this way, we pay tribute to our history.</h3>
+          <h3>We've launched channels on all
+            popular social networks where we
+            share intriguing historical facts
+            about the legendary individuals
+            featured in the collection,
+            offering a wealth of content,
+            each with a mention of the Bitcoin
+            Historical Collection. In this way,
+            we pay tribute to our history.</h3>
 
 <!--          <h3>The Historical Collection is not just-->
 <!--            the first NFT collection with portraits-->

@@ -39,11 +39,10 @@
         </div>
 
         <div class="info-text">
-          <h3>The Legendary Collection of 1,000
-            digital artifacts (NFTs) on the Bitcoin
-            blockchain! Dedicated to legendary
-            personalities in the history of humanity,
-            countries, cultures, and nations!</h3>
+          <h3>The Legendary Collection of 1,000 digital artifacts
+            (NFTs) on the Bitcoin blockchain! Dedicated to legendary
+            personalities in the history of humanity, countries, cultures,
+            and nations!</h3>
         </div>
 
         <div class="info-text desc">

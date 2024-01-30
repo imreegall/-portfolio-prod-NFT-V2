@@ -284,27 +284,30 @@ export default defineComponent({
       <div class="background"></div>
 
       <div class="text">
-        We invite you to take a close look at
-        a new trend - NFTs on the Bitcoin blockchain.
-        In early 2023, Bitcoin enthusiast Casey
-        Rodarmor introduced the Ordinal protocol.
+        We invite you to take a close look
+        at a new trend - NFTs on the Bitcoin
+        blockchain. In early 2023, Bitcoin
+        enthusiast Casey Rodarmor introduced
+        the Ordinal protocol.
 
         <br><br>
 
-        This protocol enables the creation of
-        NFTs directly within the Bitcoin blockchain,
-        with the image being permanently embedded
-        in the blockchain, fully stored and protected
-        there, impervious to removal or deletion by
-        anyone. The Bitcoin blockchain itself serves
-        as the secure vault for your NFT, immune to any
-        attacks that might attempt to remove it.
+        This protocol enables the creation
+        of NFTs directly within the Bitcoin
+        blockchain, with the image being
+        permanently embedded in the blockchain,
+        fully stored and protected there,
+        impervious to removal or deletion by
+        anyone. The Bitcoin blockchain itself
+        serves as the secure vault for your NFT,
+        immune to any attacks that might attempt to remove it.
 
         <br><br>
 
         In essence, your NFT is forever enshrined
         within the robust infrastructure of the
-        Bitcoin blockchain, safeguarded from any potential threats.
+        Bitcoin blockchain, safeguarded from any
+        potential threats.
       </div>
 
       <div
