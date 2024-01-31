@@ -7,7 +7,7 @@
 }
 @font-face {
   font-family: "VujahdayScript";
-  src: local("VujahdayScript Regular"), local("VujahdayScript-Regular"), url("/public/assets/fonts/VujahdayScript/VujahdayScript-Regular.ttf") format("truetype");
+  src: local("VujahdayScript Regular"), local("VujahdayScript-Regular"), url("/src/assets/fonts/VujahdayScript/VujahdayScript-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

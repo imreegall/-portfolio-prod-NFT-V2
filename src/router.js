@@ -1,10 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import nftMain from "./components/nft-main.vue";
-import nftAuction from "./components/nft-auction.vue";
-import nftAuctionLots from "./components/auction/nft-auction-lots.vue";
-import nftAuctionLot from "./components/auction/nft-auction-lot.vue";
-import nft404 from "./components/404/nft-404.vue";
+import nftMain from "./components/pages/nft-main.vue";
+import nftAuction from "./components/pages/nft-auction.vue";
+import nftAuctionLots from "./components/pages/auction/nft-auction-lots.vue";
+import nftAuctionLot from "./components/pages/auction/nft-auction-lot.vue";
+import nft404 from "./components/ui-kit/404/nft-404.vue";
 
 export default createRouter({
     history: createWebHistory(),
