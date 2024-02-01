@@ -1,19 +1,27 @@
 <script>
-export default {
+import { defineComponent } from 'vue'
+
+import nftShortAddress from "../mixins/nft-short-address.vue";
+
+export default defineComponent({
   name: "nft-header",
 
+  mixins: [
+    nftShortAddress
+  ],
+
   props: {
-    shortAddress: {
+    address: {
       type: String,
       default() {
-        return null
-      },
-    },
+        return ""
+      }
+    }
   },
 
   data() {
     return {
-      soon: false,
+      soon: false
     }
   },
 
@@ -51,7 +59,7 @@ export default {
       this.$emit('handleBurgerButtonClick')
     },
   },
-}
+})
 </script>
 
 <template>

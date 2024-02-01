@@ -8,7 +8,7 @@ import nftBurgerMenu from "./components/ui-kit/burger-menu/nft-burger-menu.vue";
 
 import nftWalletConnector from "./components/functionality/wallet/nft-wallet-connector.vue";
 
-import lots from "./storage/auction/lots/lots.js";
+import rawLots from "./storage/auction/lots/lots.js";
 
 export default defineComponent({
   name: "App",
@@ -28,7 +28,7 @@ export default defineComponent({
 
       highestBid: null,
 
-      lots,
+      rawLots,
 
       tryToBid: false
     }
@@ -57,26 +57,35 @@ export default defineComponent({
   },
 
   computed: {
-    shortAddress() {
-      if (!this.address) {
-        return null
+    lots() {
+      function lotsSortingFunction(prevLot, nextLot) {
+        const isNeedToSort =
+            prevLot.status === 'Active'     && nextLot.status === 'Completed'   ||
+            prevLot.status === 'Upcoming'   && nextLot.status === 'Active'      ||
+            prevLot.status === 'Upcoming'   && nextLot.status === 'Completed'
+
+        if (isNeedToSort) {
+          return 1
+        }
+
+        return -1
       }
 
-      return this.address.substring(0, 4) + "..." + this.address.substring(this.address.length - 2, this.address.length)
+      return this.rawLots.sort(lotsSortingFunction)
     }
   },
 
   watch: {
     highestBid: {
       handler(highestBid) {
-        const activeLot = this.lots.find(lot => lot.status === 'Active')
+        const activeLot = this.rawLots.find(lot => lot.status === 'Active')
 
         if (!activeLot) {
           return
         }
 
         activeLot.cost = highestBid
-      },
+      }
     }
   }
 })
@@ -85,7 +94,7 @@ export default defineComponent({
 <template>
   <div class="mainContainer">
     <nft-header
-        :shortAddress="shortAddress"
+        :address="address"
         @handleBurgerButtonClick="isBurgerMenuShown = true"
         @handleConnectButtonClick="openWalletModal"
     />
@@ -102,9 +111,9 @@ export default defineComponent({
 
     <nft-burger-menu
         v-show="isBurgerMenuShown"
-        :shortAddress="shortAddress"
-        @handleCloseButtonClick="isBurgerMenuShown = false"
-        @handleConnectButtonClick="openWalletModal"
+        :address="address"
+        @close-burger-menu="isBurgerMenuShown = false"
+        @open-modal="openWalletModal"
     />
 
     <nft-wallet-connector
