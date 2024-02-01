@@ -34,6 +34,10 @@ export default defineComponent({
     }
   },
 
+  async mounted() {
+    await this.fixActiveLot()
+  },
+
   methods: {
     openWalletModal() {
       this.$refs.walletConnector.openModal()
@@ -53,6 +57,24 @@ export default defineComponent({
 
     async handleUpdateHighestBid() {
       this.highestBid = ((await this.$refs.walletConnector.getHighestBid()) / BigInt(1000000000)).toString()
+    },
+
+    async checkActiveAuction() {
+      if (!this.$refs.walletConnector) {
+        return
+      }
+
+      return await this.$refs.walletConnector.isActive()
+    },
+
+    async fixActiveLot() {
+      if (this.rawLots.filter(lot => lot.status === 'Active').length === 1) {
+        const auctionIsActiveNow = await this.checkActiveAuction()
+
+        if (!auctionIsActiveNow) {
+          this.rawLots.find(lot => lot.status === 'Active').status = 'Completed'
+        }
+      }
     }
   },
 
@@ -95,8 +117,8 @@ export default defineComponent({
   <div class="mainContainer">
     <nft-header
         :address="address"
-        @handleBurgerButtonClick="isBurgerMenuShown = true"
-        @handleConnectButtonClick="openWalletModal"
+        @handle-burger-button-click="isBurgerMenuShown = true"
+        @handle-connect-button-click="openWalletModal"
     />
 
     <router-view
@@ -104,7 +126,7 @@ export default defineComponent({
         :lots="lots"
         @connect-wallet="openWalletModal"
         @do-bid="doBid"
-        @updateLastBid="handleUpdateHighestBid"
+        @update-last-bid="handleUpdateHighestBid"
     />
 
     <nft-footer/>
@@ -118,7 +140,7 @@ export default defineComponent({
 
     <nft-wallet-connector
         ref="walletConnector"
-        @updateData="addr => address = addr"
+        @update-data="addr => address = addr"
     />
   </div>
 </template>
