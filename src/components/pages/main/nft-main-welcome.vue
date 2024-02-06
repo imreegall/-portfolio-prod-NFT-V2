@@ -21,7 +21,7 @@ export default defineComponent({
 
         <div class="info-text">
           <h3>The Legendary Collection of 1,000 digital artifacts
-            (NFTs) on the Bitcoin blockchain! Dedicated to legendary
+            (Ordinals) on the Bitcoin blockchain! Dedicated to legendary
             personalities in the history of humanity, countries, cultures,
             and nations!</h3>
         </div>

@@ -1,3 +1,33 @@
+<script>
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "nft-main-roadmap",
+
+  data() {
+    return {
+      text: {
+        1: "Every day, all 366 days this year, " +
+            "we will be working on the Legendary " +
+            "Bitcoin Historical Collection",
+
+        2: "",
+
+        3: "We will promote the collection, " +
+            "create content, participate in " +
+            "exhibitions, do collaborations, " +
+            "hold an AMA, use webtech, and " +
+            "whatever comes to mind :)",
+
+        4: "We're not exactly sure where this " +
+            "will lead us. But let's embrace " +
+            "the journey and see where it takes us"
+      }
+    }
+  }
+})
+</script>
+
 <template>
   <div class="nft-main-roadmap" id="roadmap">
     <div class="roadmap-title">
@@ -15,54 +45,19 @@
 
       <div class="roadmap-paddings">
         <div class="roadmap-cont">
-          <div class="quarter-cont">
+          <div
+              class="quarter-cont"
+              v-for="paragraphKey in Object.keys(text)"
+          >
             <div class="quarter">
               <div class="quarter-text">
-                <h3>Every day, all 366 days this year, we will be working on the Legendary Bitcoin Historical Collection</h3>
+                <h3>{{ text[paragraphKey] }}</h3>
               </div>
 
               <div class="quarter-round">
-                <h1>Q1</h1>
-                <div class="round-line"></div>
-              </div>
-            </div>
-          </div>
+                <h1>Q{{ paragraphKey }}</h1>
 
-          <div class="quarter-cont">
-            <div class="quarter">
-              <div class="quarter-text">
-                <h3>We will promote the collection, create content, participate in exhibitions, do collaborations, hold an AMA, use the mem-token TRUD to promote the collection, use webtech, and whatever comes to mind</h3>
-              </div>
-
-              <div class="quarter-round">
-                <h1>Q2</h1>
-                <div class="round-line"></div>
-              </div>
-            </div>
-          </div>
-
-          <div class="quarter-cont">
-            <div class="quarter">
-<!--              <div class="quarter-text">-->
-<!--&lt;!&ndash;                <h3>Development of the application, adding the service to the AppStore and GooglePlay. Creating collectors club.</h3>&ndash;&gt;-->
-<!--              </div>-->
-
-              <div class="quarter-round">
-                <h1>Q3</h1>
-<!--                <div class="round-line"></div>-->
-              </div>
-            </div>
-          </div>
-
-          <div class="quarter-cont">
-            <div class="quarter">
-              <div class="quarter-text">
-                <h3>We're not exactly sure where this will lead us. But let's embrace the journey and see where it takes us</h3>
-              </div>
-
-              <div class="quarter-round">
-                <h1>Q4</h1>
-                <div class="round-line"></div>
+                <div class="round-line" v-if="text[paragraphKey]"></div>
               </div>
             </div>
           </div>
@@ -71,12 +66,6 @@
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: "nft-main-roadmap"
-}
-</script>
 
 <style lang="sass">
   .nft-main-roadmap
