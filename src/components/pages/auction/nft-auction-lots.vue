@@ -63,6 +63,6 @@ export default defineComponent({
   @media (min-width: $bigScreenStart)
     gap: 30px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     gap: 16px
 </style>

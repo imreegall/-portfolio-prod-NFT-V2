@@ -71,7 +71,7 @@ export default defineComponent({
     padding-right: 70px
     gap: 50px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     max-width: 700px
     gap: 20px
 
@@ -81,7 +81,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       font-size: 50px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       font-size: 30px
 
   main
@@ -91,7 +91,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       gap: 50px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 30px
       flex-direction: column
 
@@ -105,7 +105,7 @@ export default defineComponent({
         max-width: 575px
         height: 436px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         height: 286px
         padding-right: 25px
         position: relative
@@ -156,7 +156,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             padding: 5px 79px 0 40px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             padding: 10px 51px 0 12px
 
           .column
@@ -167,7 +167,7 @@ export default defineComponent({
               +border-radius(10px 10px 0 0)
               width: 40px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               +border-radius(6px 6px 0 0)
               width: 16px
 
@@ -175,14 +175,14 @@ export default defineComponent({
               @media (min-width: $bigScreenStart)
                 height: 122px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 height: 99px
 
             &:nth-child(3)
               @media (min-width: $bigScreenStart)
                 height: 51px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 height: 43px
 
       .bottom
@@ -196,7 +196,7 @@ export default defineComponent({
 
         @media (min-width: $bigScreenStart)
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           position: absolute
           bottom: 0
           left: 0
@@ -213,7 +213,7 @@ export default defineComponent({
         padding: 40px 50px
         font-size: 20px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         padding: 30px 20px
         font-size: 16px
 </style>

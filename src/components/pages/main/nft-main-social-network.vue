@@ -50,7 +50,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       padding: 0 60px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       padding: 0 8px
 
     .social-launch-networks
@@ -65,7 +65,7 @@ export default defineComponent({
         padding-left: 70px
         padding-right: 70px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         padding-left: 12px
         padding-right: 12px
 

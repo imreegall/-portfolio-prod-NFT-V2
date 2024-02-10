@@ -58,7 +58,7 @@ export default defineComponent({
       z-index: 10
 
   .background
-    background-image: url("/assets/images/frame1/background.png")
+    background-image: url("/assets/images/frame1/background.jpg")
     +background-image-settings()
     pointer-events: none
     width: 100%
@@ -85,7 +85,7 @@ export default defineComponent({
       100%
         transform: translateX(0) translateY(0)
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     @keyframes image1
       0%
         transform: translateX(0) translateY(0)
@@ -117,7 +117,7 @@ export default defineComponent({
       margin-left: 20%
       margin-bottom: 8%
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 150px
       margin-right: -60%
       margin-bottom: 25%
@@ -153,7 +153,7 @@ export default defineComponent({
       margin-bottom: 2%
       width: calc(100% / 1920 * 130)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 100px
       margin-right: -15%
 
@@ -185,7 +185,7 @@ export default defineComponent({
       margin-left: 28%
       width: calc(100% / 1920 * 80)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 75px
       margin-right: -85%
       margin-bottom: -10%
@@ -214,7 +214,7 @@ export default defineComponent({
       bottom: calc(100% / 1080 * 143)
       font-size: 4dvmax
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 100%
       bottom: 10%
       left: 0

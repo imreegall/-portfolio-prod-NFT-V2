@@ -77,7 +77,7 @@ export default defineComponent({
     padding-left: 60px
     padding-right: 60px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     margin-top: 88px
     gap: 30px
     padding-left: 20px

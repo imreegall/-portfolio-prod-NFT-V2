@@ -49,7 +49,7 @@ export default {
     @media (min-width: $bigScreenStart)
       gap: 140px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 60px
 
     > .wrapper
@@ -63,7 +63,7 @@ export default {
         gap: 140px
         padding-top: 252px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         gap: 60px
         padding-top: 82px
 </style>

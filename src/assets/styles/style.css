@@ -91,7 +91,7 @@ body {
   }
 }
 
-@media (max-width: 1279px), (any-pointer: coarse) {
+@media (max-width: 1279px) {
   .only-ds {
     display: none !important;
   }
@@ -133,7 +133,7 @@ body {
   background-color: rgba(131, 131, 131, 0.2) !important;
 }
 
-@media (max-width: 1279px), (any-pointer: coarse) {
+@media (max-width: 1279px) {
   .nft-social-link-mobile:hover {
     background-color: rgba(166, 166, 166, 0.2) !important;
   }

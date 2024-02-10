@@ -30,17 +30,17 @@ export default defineComponent({
 
 <template>
   <div
-      class="nft-auction-lot-image"
-      :style="{
-              backgroundImage: `url(/assets/images/auction/nfts/${ imageFilename })`
-          }"
+    class="nft-auction-lot-image"
+    :style="{
+      backgroundImage: `url(/assets/images/nfts/${ imageFilename })`
+    }"
   >
     <nft-svg-pointer class="pointer" />
 
     <a
-        class="link"
-        target="_blank"
-        :href="link"
+      class="link"
+      target="_blank"
+      :href="link"
     ></a>
   </div>
 </template>

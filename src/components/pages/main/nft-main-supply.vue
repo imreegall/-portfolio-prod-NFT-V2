@@ -1,18 +1,24 @@
 <script>
 import { defineComponent } from 'vue'
 
+import nftLazyLoadImage from "../../ui-kit/lazy-load-image/nft-lazy-load-image.vue";
+
 export default defineComponent({
   name: "nft-main-supply",
+
+  components: {
+    nftLazyLoadImage
+  },
 
   data() {
     return {
       text: [
           "All Digital Artifacts (NFTs) are unique, and the community will determine the rarity and significance of historical figures.<br><br>",
           "150 NFTs have been sold through a <a class='green-text link' href='https://ordinalsmint.tech/buy-ordinals' title='https://ordinalsmint.tech/buy-ordinals'>whitelist (WL)</a> for 0.025 BTC each, while the remaining 850 NFTs will be auctioned off in exchange for <a class='green-text link' href='https://trud.family' title='https://trud.family'>TRUD tokens</a>.<br><br>",
-          "By owning a Historical digital artifact (NFT), you become a member of the namesake collectors' club!",
-      ],
+          "By owning a Historical digital artifact (NFT), you become a member of the namesake collectors' club!"
+      ]
     }
-  },
+  }
 })
 </script>
 
@@ -26,7 +32,19 @@ export default defineComponent({
         ></h3>
       </div>
 
-      <img src="/assets/images/main/supply/1.png" alt="">
+      <nft-lazy-load-image
+        class="image"
+        image-file-format="jpg"
+        image-filename="Marilyn_Monroe"
+        path-to-image="/assets/images/nfts"
+        :resolution-collection="{
+          256: 256,
+          512: 512,
+          1024: 1024,
+        }"
+        alt="Marilyn Monroe"
+        :differentFolders="true"
+      />
     </main>
   </div>
 </template>
@@ -41,7 +59,7 @@ export default defineComponent({
     padding-left: 70px
     padding-right: 70px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     max-width: 700px
 
   main
@@ -55,7 +73,7 @@ export default defineComponent({
       padding: 60px 70px
       +border-radius(40px)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 30px
       flex-direction: column
       padding: 30px 20px 20px
@@ -72,17 +90,15 @@ export default defineComponent({
         font-size: 20px
         padding-left: 50px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         font-size: 16px
 
-    img
-      aspect-ratio: 1
-      pointer-events: none
+    .image
       +border-radius(20px)
 
       @media (min-width: $bigScreenStart)
         width: 324px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         width: 100%
 </style>

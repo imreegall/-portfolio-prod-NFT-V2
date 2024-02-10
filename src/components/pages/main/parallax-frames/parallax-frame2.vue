@@ -1,8 +1,14 @@
 <script>
 import { defineComponent } from 'vue'
 
+import nftLazyLoadImage from "../../../ui-kit/lazy-load-image/nft-lazy-load-image.vue";
+
 export default defineComponent({
   name: "parallax-frame2",
+
+  components: {
+    nftLazyLoadImage
+  },
 
   props: {
     vh: {
@@ -437,14 +443,12 @@ export default defineComponent({
                 animationDuration: `${ 8 + (index + 1) % 5 }s`,
             }"
         >
-          <div
-              class="image"
-              :style="{
-                  backgroundImage: `url(/assets/images/frame2/apes/${ ape.id }.png)`,
-              }"
-          ></div>
-
-          <div class="lazy-load lazy-load-image"></div>
+          <nft-lazy-load-image
+            class="image"
+            image-file-format="png"
+            :image-filename="ape.id"
+            path-to-image="/assets/images/frame2/apes"
+          />
         </div>
       </div>
     </main>
@@ -496,11 +500,11 @@ export default defineComponent({
 
     @media (min-width: $bigScreenStart)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       flex-direction: column
 
     .background
-      background-image: url("/assets/images/frame2/background.png")
+      background-image: url("/assets/images/frame2/background.jpg")
       +background-image-settings()
       pointer-events: none
       width: 100%
@@ -509,17 +513,10 @@ export default defineComponent({
         mix-blend-mode: plus-lighter
         height: 100vh
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         transform: scale(1.7)
         flex: 1
         height: 100%
-
-    .explode
-      position: absolute
-      width: 100%
-      height: 100%
-      background-color: white
-      z-index: 9
 
     .text
       color: #F0FBF7
@@ -536,7 +533,7 @@ export default defineComponent({
         font-size: 1dvmax
         background-color: rgba(10, 15, 36, 0.70)
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         width: 100%
         display: flex
         justify-content: center
@@ -603,7 +600,7 @@ export default defineComponent({
 
       @media (min-width: $bigScreenStart)
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         margin-bottom: 55%
         margin-left: 5%
 
@@ -626,21 +623,9 @@ export default defineComponent({
           animation-name: apeLarge
 
         .image
-          +background-image-settings()
           width: 100%
           height: 100%
           position: absolute
           top: 0
           left: 0
-          z-index: 999
-          display: flex
-
-        .lazy-load
-          width: 100%
-          height: 100%
-          position: absolute
-          top: 0
-          left: 0
-          z-index: -999
-          display: flex
 </style>

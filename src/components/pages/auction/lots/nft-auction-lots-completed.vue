@@ -59,7 +59,7 @@ export default defineComponent({
           class="image"
           :to="lotPageRouteParams"
           :style="{
-              backgroundImage: `url(/assets/images/auction/nfts/${ lot.nft.img })`
+              backgroundImage: `url(/assets/images/nfts/${ lot.nft.img })`
           }"
       ></router-link>
 
@@ -139,7 +139,7 @@ export default defineComponent({
     +border-radius(50px)
     padding: 30px 80px 30px 30px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     display: flex
     +border-radius(10px)
     padding: 10px
@@ -157,7 +157,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       gap: 30px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 11px
 
     > .image
@@ -168,7 +168,7 @@ export default defineComponent({
         height: 260px
         +border-radius(16px)
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         width: 112px
         height: 112px
         +border-radius(4px)
@@ -181,7 +181,7 @@ export default defineComponent({
       @media (min-width: $bigScreenStart)
         gap: 30px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         gap: 12px
         flex-direction: column
         align-self: normal
@@ -198,7 +198,7 @@ export default defineComponent({
           flex: 1
           justify-content: space-between
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           gap: 16px
           padding-left: 5px
 
@@ -216,7 +216,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               font-size: 24px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               font-size: 20px
 
           > .description
@@ -243,7 +243,7 @@ export default defineComponent({
                 cursor: pointer
                 +user-select(none)
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               display: none
 
         > .stats
@@ -254,7 +254,7 @@ export default defineComponent({
             gap: 20px
             width: 100%
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
 
           > .status
             display: flex
@@ -264,7 +264,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               gap: 8px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               gap: 4px
 
             > .round
@@ -275,7 +275,7 @@ export default defineComponent({
               @media (min-width: $bigScreenStart)
                 width: 16px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 width: 12px
 
             > .title
@@ -285,7 +285,7 @@ export default defineComponent({
               @media (min-width: $bigScreenStart)
                 font-size: 20px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 font-size: 16px
 
           > .options
@@ -317,7 +317,7 @@ export default defineComponent({
               > .socials
                 flex: 1
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               display: none
 
       > .price
@@ -326,7 +326,7 @@ export default defineComponent({
           align-items: center
           align-self: normal
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
 
         > .winner
           @media (min-width: $bigScreenStart)
@@ -349,7 +349,7 @@ export default defineComponent({
               line-height: 1
               font-variant-numeric: lining-nums
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             display: none
 
         > .cost
@@ -363,14 +363,14 @@ export default defineComponent({
             height: 180px
             justify-content: center
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
 
           > .fire
             @media (min-width: $bigScreenStart)
               height: 80px
               width: 80px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               height: 24px
               width: 24px
 
@@ -381,7 +381,7 @@ export default defineComponent({
               flex-direction: column
               align-items: center
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               gap: 4px
               align-items: baseline
 
@@ -392,7 +392,7 @@ export default defineComponent({
               @media (min-width: $bigScreenStart)
                 font-size: 24px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 font-size: 17px
 
             > .postfix
@@ -401,14 +401,14 @@ export default defineComponent({
               @media (min-width: $bigScreenStart)
                 font-size: 20px
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 font-size: 15px
 
   > .button
     @media (min-width: $bigScreenStart)
       display: none
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       background-color: $green
       padding: 6px 12px
       text-align: center

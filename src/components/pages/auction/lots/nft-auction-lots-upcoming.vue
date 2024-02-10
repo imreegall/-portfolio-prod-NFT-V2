@@ -41,7 +41,7 @@ export default defineComponent({
         class="image"
         :to="lotPageRouteParams"
         :style="{
-              backgroundImage: `url(/assets/images/auction/nfts/${ lot.nft.img })`
+              backgroundImage: `url(/assets/images/nfts/${ lot.nft.img })`
           }"
     ></router-link>
 
@@ -94,7 +94,7 @@ export default defineComponent({
     padding: 30px 80px 30px 30px
     gap: 30px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     display: flex
     +border-radius(10px)
     padding: 10px
@@ -111,7 +111,7 @@ export default defineComponent({
       width: 260px
       +border-radius(16px)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 112px
       +border-radius(4px)
 
@@ -123,7 +123,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       gap: 30px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 12px
       flex-direction: column
       align-self: normal
@@ -140,7 +140,7 @@ export default defineComponent({
         flex: 1
         justify-content: space-between
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         gap: 16px
 
       > .info
@@ -157,7 +157,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 24px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 20px
 
         > .description
@@ -184,7 +184,7 @@ export default defineComponent({
               cursor: pointer
               +user-select(none)
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             display: none
 
       > .stats
@@ -195,7 +195,7 @@ export default defineComponent({
           gap: 20px
           width: 100%
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
 
         > .status
           display: flex
@@ -205,7 +205,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             gap: 8px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             gap: 4px
 
           @keyframes rounding
@@ -222,7 +222,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               width: 16px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               width: 12px
 
           > .title
@@ -232,7 +232,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               font-size: 20px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               font-size: 16px
 
         > .options
@@ -244,7 +244,7 @@ export default defineComponent({
             width: 100%
             max-width: 437px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             display: none
 
     > .start
@@ -257,7 +257,7 @@ export default defineComponent({
         width: 180px
         justify-content: center
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
 
       > .title
         color: $lotBidTitle
@@ -266,7 +266,7 @@ export default defineComponent({
         @media (min-width: $bigScreenStart)
           font-size: 17px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           font-size: 15px
           text-align: center
 
@@ -278,6 +278,6 @@ export default defineComponent({
         @media (min-width: $bigScreenStart)
           font-size: 24px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           font-size: 16px
 </style>

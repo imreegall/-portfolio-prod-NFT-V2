@@ -45,7 +45,7 @@ export default defineComponent({
     padding-right: 70px
     gap: 50px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     max-width: 700px
     gap: 20px
 
@@ -55,7 +55,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       font-size: 50px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       font-size: 30px
 
   main
@@ -71,7 +71,7 @@ export default defineComponent({
       padding: 60px 70px
       +border-radius(30px)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       font-size: 16px
       padding: 30px 20px
       +border-radius(20px)

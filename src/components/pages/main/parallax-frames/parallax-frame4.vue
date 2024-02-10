@@ -1,147 +1,153 @@
 <script>
 import { defineComponent } from 'vue'
 
+import nftLazyLoadImage from "../../../ui-kit/lazy-load-image/nft-lazy-load-image.vue";
+
 export default defineComponent({
   name: "parallax-frame4",
+
+  components: {
+    nftLazyLoadImage
+  },
 
   props: {
     vh: {
       type: Number,
       default() {
         return 0
-      },
-    },
+      }
+    }
   },
 
   data() {
     return {
       icons: [
         {
-          id: 1,
+          title: "Pele",
 
           desktop: {
             size: 50,
-            position: [-560, -140, 0],
+            position: [-560, -140, 0]
           },
 
           mobile: {
             size: 120,
-            position: [-750, -1050, 0],
-          },
+            position: [-750, -1050, 0]
+          }
         },
 
         {
-          id: 2,
+          title: "Julius_Caesar",
 
           desktop: {
             size: 50,
-            position: [-390, -120, 0],
+            position: [-390, -120, 0]
           },
 
           mobile: {
             size: 120,
-            position: [-560, -1020, 0],
-          },
+            position: [-560, -1020, 0]
+          }
         },
 
         {
-          id: 3,
+          title: "Oscar_Wilde",
 
           desktop: {
             size: 50,
-            position: [-180, -170, 0],
+            position: [-180, -170, 0]
           },
 
           mobile: {
             size: 120,
-            position: [-270, -1100, 0],
-          },
+            position: [-270, -1100, 0]
+          }
         },
 
         {
-          id: 4,
+          title: "Steve_Jobs",
 
           desktop: {
             size: 50,
-            position: [70, -150, 0],
+            position: [70, -150, 0]
           },
 
           mobile: {
             size: 120,
-            position: [70, -1050, 0],
-          },
+            position: [70, -1050, 0]
+          }
         },
 
         {
-          id: 5,
+          title: "Nikola_Tesla",
 
           desktop: {
             size: 50,
-            position: [460, -250, 0],
+            position: [460, -250, 0]
           },
 
           mobile: {
             size: 120,
-            position: [650, -1220, 0],
-          },
+            position: [650, -1220, 0]
+          }
         },
 
         {
-          id: 6,
+          title: "Marilyn_Monroe",
 
           desktop: {
             size: 50,
-            position: [560, -380, 0],
+            position: [560, -380, 0]
           },
 
           mobile: {
             size: 120,
-            position: [800, -1400, 0],
-          },
+            position: [800, -1400, 0]
+          }
         },
 
         {
-          id: 7,
+          title: "John_Kennedy",
 
           desktop: {
             size: 50,
-            position: [340, 240, 0],
+            position: [340, 240, 0]
           },
 
           mobile: {
             size: 120,
-            position: [470, -520, 0],
-          },
+            position: [470, -520, 0]
+          }
         },
 
         {
-          id: 8,
+          title: "Harry_Truman",
 
           desktop: {
             size: 50,
-            position: [190, 370, 0],
+            position: [190, 370, 0]
           },
 
           mobile: {
             size: 120,
-            position: [280, -330, 0],
-          },
+            position: [280, -330, 0]
+          }
         },
 
         {
-          id: 9,
+          title: "Albert_Einstein",
 
           desktop: {
             size: 50,
-            position: [-330, 230, 0],
+            position: [-330, 230, 0]
           },
 
           mobile: {
             size: 120,
-            position: [-460, -500, 0],
-          },
-        },
-      ],
+            position: [-460, -500, 0]
+          }
+        }
+      ]
     }
   },
 
@@ -189,12 +195,13 @@ export default defineComponent({
                 translateY(calc(100% / ${ icon.desktop.size } * ${ icon.desktop.position[1] + 200 * iconsOffset }))`,
         }"
     >
-      <div
-          class="icon lazy-load-image"
-          :style="{
-              backgroundImage: `url(/assets/images/frame4/icons/${ icon.id }.png)`,
-          }"
-      ></div>
+      <nft-lazy-load-image
+        class="icon"
+        image-file-format="jpg"
+        :image-filename="icon.title + '-256'"
+        path-to-image="/assets/images/nfts/256"
+        :alt="icon.title.replaceAll('_', ' ')"
+      />
     </div>
 
     <div
@@ -206,12 +213,13 @@ export default defineComponent({
                 translateY(calc(100% / ${ icon.mobile.size } * ${ icon.mobile.position[1] + 200 * iconsOffset }))`,
         }"
     >
-      <div
-          class="icon lazy-load-image"
-          :style="{
-              backgroundImage: `url(/assets/images/frame4/icons/${ icon.id }.png)`,
-          }"
-      ></div>
+      <nft-lazy-load-image
+        class="icon"
+        image-file-format="jpg"
+        :image-filename="icon.title + '-256'"
+        path-to-image="/assets/images/nfts/256"
+        :alt="icon.title.replaceAll('_', ' ')"
+      />
     </div>
 
     <div class="text">
@@ -270,7 +278,7 @@ export default defineComponent({
       z-index: 10
 
   .background
-    background-image: url("/assets/images/frame4/background.png")
+    background-image: url("/assets/images/frame4/background.jpg")
     +background-image-settings()
     pointer-events: none
     width: 100%
@@ -279,7 +287,7 @@ export default defineComponent({
 
     @media (min-width: $bigScreenStart)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       transform: scale(1.5)
 
   .star-sky
@@ -293,7 +301,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       width: calc(100% / 1920 * 1127)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 350px
       margin-bottom: 90%
 
@@ -306,7 +314,6 @@ export default defineComponent({
       position: absolute
       width: 100%
       height: 100%
-      +background-image-settings()
       +border-radius(2px)
       box-shadow: 0 0 20px 2px #1CC2A5
 
@@ -325,7 +332,7 @@ export default defineComponent({
       top: calc((100% - (100% / 1080 * 290)) / 2 + 100% / 1080 * 75)
       font-size: 1dvmax
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       bottom: 0
       padding: 20px
       +border-radius(10px 10px 0 0)

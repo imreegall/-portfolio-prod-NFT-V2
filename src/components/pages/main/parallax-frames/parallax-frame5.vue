@@ -106,7 +106,7 @@ export default defineComponent({
       z-index: 10
 
   .background
-    background-image: url("/assets/images/frame5/background.png")
+    background-image: url("/assets/images/frame5/background.jpg")
     +background-image-settings()
     pointer-events: none
     width: 100%
@@ -115,7 +115,7 @@ export default defineComponent({
 
     @media (min-width: $bigScreenStart)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       transform: scale(1.2) translateY(-280px)
       display: flex
       align-items: center
@@ -138,7 +138,7 @@ export default defineComponent({
 
     @media (min-width: $bigScreenStart)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 100%
       height: 100%
 
@@ -155,7 +155,7 @@ export default defineComponent({
         max-width: calc(100% / 1920 * 810)
         font-size: 1dvmax
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         bottom: 0
         position: absolute
         width: 100%

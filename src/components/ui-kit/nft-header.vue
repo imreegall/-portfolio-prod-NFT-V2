@@ -97,7 +97,7 @@ export default defineComponent({
       padding: 40px 60px 150px
       max-width: calc(1290px + 60px * 2)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       padding: 24px 16px 0
 
     > .title
@@ -109,7 +109,7 @@ export default defineComponent({
         font-size: 36px
         line-height: 47px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         font-size: 24px
         line-height: 15px
 

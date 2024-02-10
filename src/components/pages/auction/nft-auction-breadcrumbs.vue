@@ -49,7 +49,7 @@ export default defineComponent({
       }
 
       crumbs.push({
-        title: this.nftObject.nft.title,
+        title: this.nftObject.nft.title
       })
 
       return crumbs

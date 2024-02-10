@@ -56,7 +56,7 @@ export default defineComponent({
       padding-right: 70px
       width: 100%
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       align-items: center
       flex-direction: column
       width: 100%
@@ -74,7 +74,7 @@ export default defineComponent({
         gap: 60px
         align-items: flex-start
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         align-items: center
         text-align: center
         gap: 30px
@@ -86,7 +86,7 @@ export default defineComponent({
         @media (min-width: $bigScreenStart)
           gap: 40px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           gap: 20px
           max-width: 700px
 
@@ -96,7 +96,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 70px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 32px
 
         .info-text
@@ -105,7 +105,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 24px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 16px
 
           &.desc
@@ -129,7 +129,7 @@ export default defineComponent({
             font-size: 24px
             line-height: 28px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             padding: 16px 40px 18px
             font-size: 18px
             line-height: 21px
@@ -146,7 +146,7 @@ export default defineComponent({
         //flex-shrink: 1
         margin-left: 100px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         max-width: 500px
         width: 100%
         padding: 15px

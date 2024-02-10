@@ -1,16 +1,22 @@
 <script>
 import { defineComponent } from 'vue'
 
+import nftLazyLoadImage from "../../../ui-kit/lazy-load-image/nft-lazy-load-image.vue";
+
 export default defineComponent({
   name: "parallax-frame3",
+
+  components: {
+    nftLazyLoadImage
+  },
 
   props: {
     vh: {
       type: Number,
       default() {
         return 0
-      },
-    },
+      }
+    }
   },
 
   data() {
@@ -19,214 +25,214 @@ export default defineComponent({
 
       icons: [
         {
-          id: 1,
+          title: "Muhammad_Ali",
 
           desktop: {
             size: 160,
-            position: [-600, -170, -6],
-          },
+            position: [-600, -170, -6]
+          }
         },
 
         {
-          id: 2,
+          title: "Isaac_Newton",
 
           desktop: {
             size: 90,
             position: [-620, 100, -24],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 3,
+          title: "Che_Guevara",
 
           desktop: {
             size: 160,
-            position: [-480, 230, -52],
-          },
+            position: [-480, 230, -52]
+          }
         },
 
         {
-          id: 4,
+          title: "Nelson_Mandela",
 
           desktop: {
             size: 70,
             position: [-470, 50, -22],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 5,
+          title: "Winston_Churchill",
 
           desktop: {
             size: 100,
             position: [-350, -120, 48],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 6,
+          title: "Albert_Einstein",
 
           desktop: {
             size: 70,
             position: [-290, 160, 0],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 7,
+          title: "Nikola_Tesla",
 
           desktop: {
             size: 90,
             position: [-210, 10, -40],
-            blur: 0.5,
+            blur: 0.5
           },
 
           mobile: {
             size: 400,
             position: [-600, -900, -8],
-            blur: 0.5,
+            blur: 0.5
           }
         },
 
         {
-          id: 8,
+          title: "Pele",
 
           desktop: {
             size: 190,
-            position: [-150, -280, -16],
+            position: [-150, -280, -16]
           },
 
           mobile: {
             size: 600,
-            position: [-1000, -1400, -16],
+            position: [-1000, -1400, -16]
           }
         },
 
         {
-          id: 9,
+          title: "Marilyn_Monroe",
 
           desktop: {
             size: 230,
-            position: [-20, 160, -7],
+            position: [-20, 160, -7]
           },
 
           mobile: {
             size: 800,
-            position: [200, -500, 4],
+            position: [200, -500, 4]
           }
         },
 
         {
-          id: 10,
+          title: "John_Kennedy",
 
           desktop: {
             size: 50,
             position: [-90, -30, 6],
-            blur: 1,
+            blur: 1
           },
 
           mobile: {
             size: 200,
             position: [-970, -720, 6],
-            blur: 1,
+            blur: 1
           }
         },
 
         {
-          id: 11,
+          title: "Steve_Jobs",
 
           desktop: {
             size: 120,
             position: [50, -60, 20],
-            blur: 0.5,
+            blur: 0.5
           },
 
           mobile: {
             size: 400,
             position: [-550, -200, 8],
-            blur: 0.5,
+            blur: 0.5
           }
         },
 
         {
-          id: 12,
+          title: "Napoleon_Bonaparte",
 
           desktop: {
             size: 100,
             position: [50, -300, 3],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 13,
+          title: "Bruce_Lee",
 
           desktop: {
             size: 100,
             position: [60, 330, 143],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 14,
+          title: "Julius_Caesar",
 
           desktop: {
             size: 90,
             position: [280, -300, 16],
-            blur: 1,
+            blur: 1
           },
 
           mobile: {
             size: 400,
             position: [450, -1400, 16],
-            blur: 1,
+            blur: 1
           }
         },
 
         {
-          id: 15,
+          title: "Colonel_Sanders",
 
           desktop: {
             size: 100,
             position: [360, 270, -18],
-            blur: 0.5,
-          },
+            blur: 0.5
+          }
         },
 
         {
-          id: 16,
+          title: "Abraham_Lincoln",
 
           desktop: {
             size: 100,
-            position: [570, -330, -26],
-          },
+            position: [570, -330, -26]
+          }
         },
 
         {
-          id: 17,
+          title: "Harry_Truman",
 
           desktop: {
             size: 60,
             position: [620, 330, 30],
-            blur: 1,
-          },
+            blur: 1
+          }
         },
 
         {
-          id: 18,
+          title: "Tupac_Shakur",
 
           mobile: {
             size: 300,
             position: [-230, -1300, 16],
-            blur: 1,
-          },
-        },
-      ],
+            blur: 1
+          }
+        }
+      ]
     }
   },
 
@@ -243,7 +249,7 @@ export default defineComponent({
   methods: {
     checkMobile() {
       this.isMobile = window.matchMedia('(max-width: 1279px)').matches
-    },
+    }
   },
 
   computed: {
@@ -273,8 +279,8 @@ export default defineComponent({
 
     mobileConf() {
       return this.isMobile ? 'mobile' : 'desktop'
-    },
-  },
+    }
+  }
 })
 </script>
 
@@ -334,12 +340,19 @@ export default defineComponent({
                   animationDuration: `${ 8 + (index + 1) % 5 }s`
               }"
         >
-          <div
-              class="icon lazy-load-image"
-              :style="{
-                  backgroundImage: `url(/assets/images/frame3/icons/${ icon.id }.png)`,
-              }"
-          ></div>
+          <nft-lazy-load-image
+            class="icon"
+            image-file-format="jpg"
+            :image-filename="icon.title + '-1024'"
+            path-to-image="/assets/images/nfts/1024"
+            :alt="icon.title.replaceAll('_', ' ')"
+          />
+<!--          <div-->
+<!--              class="icon lazy-load-image"-->
+<!--              :style="{-->
+<!--                  backgroundImage: `url(/assets/images/nfts/${ icon.title }.jpg)`,-->
+<!--              }"-->
+<!--          ></div>-->
         </div>
       </div>
     </main>
@@ -354,6 +367,7 @@ export default defineComponent({
   display: flex
   align-items: center
   justify-content: center
+  overflow: hidden
 
   @media (min-width: $bigScreenStart)
     &::before
@@ -388,7 +402,7 @@ export default defineComponent({
     background-color: $mainBackground
 
     .background
-      background-image: url("/assets/images/frame3/background.png")
+      background-image: url("/assets/images/frame3/background.jpg")
       +background-image-settings()
       pointer-events: none
       width: 100%
@@ -398,15 +412,8 @@ export default defineComponent({
       @media (min-width: $bigScreenStart)
         transform: rotateY(180deg)
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         transform: scale(1)
-
-    .explode
-      position: absolute
-      width: 100%
-      height: 100%
-      background-color: white
-      z-index: 500
 
     .text
       color: #F0FBF7
@@ -423,7 +430,7 @@ export default defineComponent({
         +border-radius(10px)
         font-size: 1dvmax
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         bottom: 0
         padding: 20px
         +border-radius(10px 10px 0 0)
@@ -485,7 +492,7 @@ export default defineComponent({
 
       @media (min-width: $bigScreenStart)
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         margin-bottom: -15%
         margin-left: 25%
 
@@ -508,11 +515,10 @@ export default defineComponent({
           position: absolute
           width: 100%
           height: 100%
-          +background-image-settings()
 
           @media (min-width: $bigScreenStart)
             +border-radius(3%)
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             +border-radius(10%)
 </style>

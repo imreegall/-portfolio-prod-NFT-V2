@@ -61,7 +61,7 @@ export default {
       max-width: calc(1290px + 60px * 2)
       gap: 20px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       padding: 35px 0 30px
       max-width: 1290px
       gap: 32px
@@ -74,7 +74,7 @@ export default {
       @media (min-width: $bigScreenStart)
         justify-content: space-between
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         $padding: 32px
         padding-left: $padding
         padding-right: $padding
@@ -89,7 +89,7 @@ export default {
           width: 80px
           height: 80px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           width: 100px
           height: 100px
 
@@ -101,7 +101,7 @@ export default {
         @media (min-width: $bigScreenStart)
           gap: 20px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           gap: 24px
           max-width: calc(40px * 4 + 24px * 3)
 
@@ -111,7 +111,7 @@ export default {
 
           @media (min-width: $bigScreenStart)
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             background-color: $socialMediaBackground
             +border-radius(12px)
             padding: calc(40px / 6)
@@ -132,7 +132,7 @@ export default {
           line-height: 23px
           padding: 12px 50px 14px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           font-size: 18px
           line-height: 21px
           padding: 12px 45px 14px
@@ -146,7 +146,7 @@ export default {
         font-size: 20px
         line-height: 23px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         background-color: $footerHrMobile
         height: 1px
         font-size: 18px

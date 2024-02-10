@@ -80,7 +80,7 @@ export default defineComponent({
       padding-right: 70px
       gap: 50px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       padding-left: 12px
       padding-right: 12px
       max-width: 700px
@@ -92,7 +92,7 @@ export default defineComponent({
       @media (min-width: $bigScreenStart)
         font-size: 50px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         font-size: 30px
 
     .roadmap
@@ -103,7 +103,7 @@ export default defineComponent({
       @media (min-width: $bigScreenStart)
         align-items: center
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         width: 100%
         overflow: hidden
         flex-direction: column
@@ -116,7 +116,7 @@ export default defineComponent({
           width: 100%
           font-size: 36px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           font-size: 24px
           width: 56px
           display: flex
@@ -129,7 +129,7 @@ export default defineComponent({
             position: absolute
             bottom: 10px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
 
         .hr-cont
           hr
@@ -139,7 +139,7 @@ export default defineComponent({
               height: 2px
               width: 100%
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               position: absolute
               width: 2px
               height: 90%
@@ -152,7 +152,7 @@ export default defineComponent({
           padding-left: 105px
           padding-right: 65px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
 
         .roadmap-cont
           display: flex
@@ -163,7 +163,7 @@ export default defineComponent({
             width: 100%
             justify-content: space-around
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             flex-direction: column
             gap: 40px
 
@@ -194,7 +194,7 @@ export default defineComponent({
                     .round-line
                       top: -60px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
 
             .quarter
               display: flex
@@ -209,7 +209,7 @@ export default defineComponent({
                 gap: 70px
                 position: relative
 
-              @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+              @media (max-width: $smallScreenEnd)
                 font-size: 16px
                 flex-direction: row-reverse
                 gap: 24px
@@ -219,7 +219,7 @@ export default defineComponent({
                   width: 380px
                   position: absolute
 
-                @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+                @media (max-width: $smallScreenEnd)
 
               .quarter-round
                 background: linear-gradient(135deg, #1CC287 0%, #088658 100%)
@@ -234,7 +234,7 @@ export default defineComponent({
                   width: 80px
                   height: 80px
 
-                @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+                @media (max-width: $smallScreenEnd)
                   width: 56px
                   height: 56px
                   flex-shrink: 0
@@ -248,6 +248,6 @@ export default defineComponent({
                     position: absolute
                     +opacity(50)
 
-                  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+                  @media (max-width: $smallScreenEnd)
                     display: none
 </style>

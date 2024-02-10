@@ -37,7 +37,7 @@ export default defineComponent({
         class="image"
         :to="lotPageRouteParams"
         :style="{
-              backgroundImage: `url(/assets/images/auction/nfts/${ lot.nft.img })`
+              backgroundImage: `url(/assets/images/nfts/${ lot.nft.img })`
           }"
     ></router-link>
 
@@ -100,7 +100,7 @@ export default defineComponent({
     padding: 30px 80px 30px 30px
     gap: 30px
 
-  @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+  @media (max-width: $smallScreenEnd)
     display: flex
     +border-radius(10px)
     padding: 10px
@@ -117,7 +117,7 @@ export default defineComponent({
       width: 260px
       +border-radius(16px)
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       width: 112px
       +border-radius(4px)
 
@@ -129,7 +129,7 @@ export default defineComponent({
     @media (min-width: $bigScreenStart)
       gap: 30px
 
-    @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+    @media (max-width: $smallScreenEnd)
       gap: 12px
       flex-direction: column
       align-self: normal
@@ -146,7 +146,7 @@ export default defineComponent({
         flex: 1
         justify-content: space-between
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         gap: 16px
         padding-left: 5px
 
@@ -164,7 +164,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 24px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 20px
 
         > .description
@@ -191,7 +191,7 @@ export default defineComponent({
               cursor: pointer
               +user-select(none)
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             display: none
 
       > .stats
@@ -202,7 +202,7 @@ export default defineComponent({
           gap: 20px
           width: 100%
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
 
         > .status
           display: flex
@@ -212,7 +212,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             gap: 8px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             gap: 4px
 
           > .round
@@ -223,7 +223,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               width: 16px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               width: 12px
 
           > .title
@@ -233,7 +233,7 @@ export default defineComponent({
             @media (min-width: $bigScreenStart)
               font-size: 20px
 
-            @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+            @media (max-width: $smallScreenEnd)
               font-size: 16px
 
         > .options
@@ -273,7 +273,7 @@ export default defineComponent({
                 background: linear-gradient(105deg, transparent 0%, transparent 5%, $white 60%, transparent 61%)
                 animation: light 3s infinite linear
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             display: none
 
     > .price
@@ -287,7 +287,7 @@ export default defineComponent({
         position: relative
         width: 180px
 
-      @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+      @media (max-width: $smallScreenEnd)
         background-color: $headerGreen
         padding: 12px 16px
         +border-radius(10px)
@@ -298,7 +298,7 @@ export default defineComponent({
           width: 180px
           aspect-ratio: 1
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           display: none
 
       > .title
@@ -309,7 +309,7 @@ export default defineComponent({
         @media (min-width: $bigScreenStart)
           font-size: 17px
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           font-size: 15px
 
       > .value
@@ -320,7 +320,7 @@ export default defineComponent({
           flex-direction: column
           align-items: center
 
-        @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+        @media (max-width: $smallScreenEnd)
           gap: 4px
           align-items: baseline
 
@@ -332,7 +332,7 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 24px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 16px
 
         > .postfix
@@ -342,6 +342,6 @@ export default defineComponent({
           @media (min-width: $bigScreenStart)
             font-size: 20px
 
-          @media (max-width: $smallScreenEnd), (any-pointer: coarse)
+          @media (max-width: $smallScreenEnd)
             font-size: 15px
 </style>
