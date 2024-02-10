@@ -32,7 +32,7 @@ export default defineComponent({
   <div
     class="nft-auction-lot-image"
     :style="{
-      backgroundImage: `url(/assets/images/nfts/${ imageFilename })`
+      backgroundImage: `url(/assets/images/nfts/1024/${ imageFilename })`
     }"
   >
     <nft-svg-pointer class="pointer" />

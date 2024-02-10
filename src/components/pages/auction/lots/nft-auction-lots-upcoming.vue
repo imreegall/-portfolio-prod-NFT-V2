@@ -41,7 +41,7 @@ export default defineComponent({
         class="image"
         :to="lotPageRouteParams"
         :style="{
-              backgroundImage: `url(/assets/images/nfts/${ lot.nft.img })`
+              backgroundImage: `url(/assets/images/nfts/1024/${ lot.nft.img })`
           }"
     ></router-link>
 

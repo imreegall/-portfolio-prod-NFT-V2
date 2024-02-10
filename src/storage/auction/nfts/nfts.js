@@ -2,31 +2,31 @@ export default {
     CharlieChaplin: {
         title: "Charlie Chaplin",
         description: "He was a comic actor, filmmaker, and composer who rose to fame in the era of silent film. He was a comic actor, filmmaker, and composer who rose to fame in the era of silent film. He was a comic actor, filmmaker, and composer who rose to fame in the era of silent film",
-        img: "Charlie_Chaplin.jpg"
+        img: "Charlie_Chaplin-1024.jpg"
     },
 
     AlbertEinstein: {
         title: "Albert Einstein",
         description: "Theoretical physicist, widely acknowledged to be one of the greatest and most influential physicists of all time. He is best known for developing the theory of relativity.",
-        img: "Albert_Einstein.jpg"
+        img: "Albert_Einstein-1024.jpg"
     },
 
     DianaFrancesSpencer: {
         title: "Diana Frances Spencer",
         description: "She was a member of the British royal family. Her activism and glamour made her an international icon, and earned her enduring popularity.",
-        img: "Diana_Frances_Spencer.jpg"
+        img: "Diana_Frances_Spencer-1024.jpg"
     },
 
     BenjaminFranklin: {
         title: "Benjamin Franklin",
         description: "Father of the USA. Politician, diplomat, philosopher, writer, mason.",
-        img: "Benjamin_Franklin.jpg"
+        img: "Benjamin_Franklin-1024.jpg"
     },
 
     SteveJobs: {
         title: "Steve Jobs",
         description: "American entrepreneur, inventor and industrial designer, widely recognized as a pioneer of the information technology era. One of the founders, chairman of the Board of Directors and CEO of Apple Corporation. One of the founders and CEO of Pixar film studio",
-        img: "Steve_Jobs.jpg"
+        img: "Steve_Jobs-1024.jpg"
     },
 
     MartinLutherKing: {
@@ -62,7 +62,7 @@ export default {
             "continue to inspire generations. His legacy reminds us of the ongoing " +
             "struggle for equality and the importance of peaceful activism in " +
             "creating lasting change.",
-        img: "Martin_Luther_King.jpg",
+        img: "Martin_Luther_King-1024.jpg",
         okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/aa48e4aa5626f24a278cdb691af004b8dd16ffb43d83e154476c17377e498e19i0"
     },
 
@@ -100,7 +100,7 @@ export default {
             "financially. He passed away on April 21, 1910, leaving behind " +
             "an extensive literary legacy that continues to inspire and " +
             "entertain readers around the world.",
-        img: "Mark_Twain.jpg",
+        img: "Mark_Twain-1024.jpg",
         okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/1cf821340a74d345e61bf34cf0634fbb73c4bcd0d62cf25e7e1b0dc01231a111i0"
     },
 
@@ -144,7 +144,7 @@ export default {
             "legacy that continues to inspire many writers and artists worldwide. " +
             "His works have been adapted into highly successful films and " +
             "continue to be a significant part of popular culture.",
-        img: "J_R_R_Tolkien.jpg",
+        img: "J_R_R_Tolkien-1024.jpg",
         okxLink: "https://www.okx.com/web3/marketplace/nft/asset/btc/9facf24e6b1eda24660714eddd6de9eb651ea27b3c1d0f88d0a01b1cf8b85a23i0"
     }
 }
