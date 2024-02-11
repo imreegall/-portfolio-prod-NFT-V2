@@ -70,9 +70,9 @@ export default defineComponent({
         <h2 class="title">Auction house</h2>
       </router-link>
 
-      <a href="https://trud.family/" target="_blank" @click="closeBurgerMenu">
-        <h2 class="title">TRUD Token</h2>
-      </a>
+      <router-link :to="{ name: 'whitelist' }" @click="closeBurgerMenu">
+        <h2 class="title">Whitelist</h2>
+      </router-link>
 
       <a
           href="https://www.okx.com/web3/marketplace/nft/collection/btc/historical-collection-1"

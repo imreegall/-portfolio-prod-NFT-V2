@@ -30,7 +30,9 @@ export default defineComponent({
 
       rawLots,
 
-      tryToBid: false
+      tryToBid: false,
+
+      refName: "",
     }
   },
 
@@ -124,9 +126,11 @@ export default defineComponent({
     <router-view
         :address="address"
         :lots="lots"
+        :ref-name="refName"
         @connect-wallet="openWalletModal"
         @do-bid="doBid"
         @update-last-bid="handleUpdateHighestBid"
+        @update-ref="referralName => refName = referralName"
     />
 
     <nft-footer/>

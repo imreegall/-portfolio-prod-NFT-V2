@@ -72,6 +72,8 @@ export default defineComponent({
       <h2 @click="handleLinkClick('https://trud.family/')">TRUD Token</h2>
 
       <h2 @click="handleSoonButtonClick">Club</h2>
+
+      <h2 @click="handleNavClick('whitelist')">Whitelist</h2>
     </nav>
 
     <div class="button only-ds" @click="handleConnectButtonClick">

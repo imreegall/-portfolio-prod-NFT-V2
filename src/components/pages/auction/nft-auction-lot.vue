@@ -79,24 +79,26 @@ export default defineComponent({
 <template>
   <nft404 v-if="error404" />
 
-  <nft-auction-lot-completed
+  <template v-else>
+    <nft-auction-lot-completed
       v-if="statusIsCompleted"
       :lot="lot"
       :address="address"
-  />
+    />
 
-  <nft-auction-lot-active
+    <nft-auction-lot-active
       v-if="statusIsActive"
       :lot="lot"
       :address="address"
       @connect-wallet="connectWallet"
       @do-bid="doBid"
-  />
+    />
 
-  <nft-auction-lot-upcoming
+    <nft-auction-lot-upcoming
       v-if="statusIsUpcoming"
       :lot="lot"
-  />
+    />
+  </template>
 </template>
 
 <style scoped lang="sass">
