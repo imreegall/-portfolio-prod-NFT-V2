@@ -7,7 +7,7 @@ import nftAuctionLots from "./components/pages/auction/nft-auction-lots.vue";
 import nftAuctionLot from "./components/pages/auction/nft-auction-lot.vue";
 
 import nftWhitelist from "./components/pages/nft-whitelist.vue";
-import nftRef from "./components/pages/ref/nft-ref.vue";
+import nftRef from "./components/pages/nft-ref.vue";
 
 import nft404 from "./components/ui-kit/404/nft-404.vue";
 

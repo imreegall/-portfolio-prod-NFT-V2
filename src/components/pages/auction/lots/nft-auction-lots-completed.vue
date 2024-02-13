@@ -47,6 +47,14 @@ export default defineComponent({
 
     isOwner() {
       return this.address === this.walletAddress
+    },
+
+    isNeedToShowStatus() {
+      return this.lot.isShowStatus
+    },
+
+    lotCost() {
+      return this.lot.cost
     }
   }
 })
@@ -80,7 +88,7 @@ export default defineComponent({
           </div>
 
           <div class="stats">
-            <div class="status">
+            <div class="status" v-if="isNeedToShowStatus">
               <div class="round"></div>
 
               <h2 class="title">Completed</h2>
@@ -111,7 +119,7 @@ export default defineComponent({
             <nft-svg-fire class="fire" />
 
             <div class="value">
-              <h2 class="number">{{ lot.cost }}</h2>
+              <h2 class="number">{{ lotCost }}</h2>
 
               <h4 class="postfix">TRUD</h4>
             </div>

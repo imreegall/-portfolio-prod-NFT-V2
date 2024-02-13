@@ -64,6 +64,16 @@ export default defineComponent({
 
       shareCurrentPage()
     }
+  },
+
+  computed: {
+    winnerAddress() {
+      return this.lot.address
+    },
+
+    title() {
+      return this.lot.nft.title
+    }
   }
 })
 </script>
@@ -77,7 +87,7 @@ export default defineComponent({
       />
 
       <a
-          v-if="lot.address === address"
+          v-if="winnerAddress === address"
           href="#"
           class="button"
       ><h2>Receive your NFT</h2></a>
@@ -86,7 +96,7 @@ export default defineComponent({
     <main>
       <div class="top">
         <div class="name">
-          <h6 class="title">{{ lot.nft.title }}</h6>
+          <h6 class="title">{{ title }}</h6>
 
           <nft-svg-share
               class="button"
@@ -113,10 +123,10 @@ export default defineComponent({
       </div>
 
       <div class="bottom">
-        <div class="winner">
+        <div class="winner" v-if="winnerAddress">
           <h4 class="title">Winner</h4>
 
-          <h2 class="value">{{ lot.address }}</h2>
+          <h2 class="value">{{ winnerAddress }}</h2>
         </div>
 
         <div class="stats">
