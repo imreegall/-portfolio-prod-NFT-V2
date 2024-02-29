@@ -14,7 +14,7 @@ export default defineComponent({
     return {
       text: [
           "All Digital Artifacts (NFTs) are unique, and the community will determine the rarity and significance of historical figures.<br><br>",
-          "150 NFTs have been sold through a <a class='green-text link' href='https://ordinalsmint.tech/buy-ordinals' title='https://ordinalsmint.tech/buy-ordinals'>whitelist (WL)</a> for 0.025 BTC each.<br><br>",
+          "150 NFTs have been sold through a <a class='green-text link' href='https://historicalcollection.art/whitelist' title='https://historicalcollection.art/whitelist'>whitelist (WL)</a> for 0.025 BTC each.<br><br>",
           "By owning a Historical digital artifact (NFT), you become a member of the namesake collectors' club!"
       ]
     }

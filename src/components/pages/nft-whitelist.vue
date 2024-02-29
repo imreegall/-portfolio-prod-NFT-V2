@@ -22,6 +22,8 @@ export default defineComponent({
       satBalance: 0,
       minimumSatBalance: 2500000,
 
+      isTesting: true,
+
       twitterIsClicked: false,
       tweetIsClicked: false,
       discordIsClicked: false,
@@ -54,17 +56,23 @@ export default defineComponent({
 
       this.isLoadingTaproot = true
 
-      await axios.get(`https://blockchain.info/q/addressbalance/${ this.taprootAddress }`)
-        .then(res => {
-          this.satBalance = res.data
-          this.walletAddress = this.taprootAddress
-          this.taprootAddress = this.btcBalance + " BTC"
-        })
-        .catch(err => {
-          this.satBalance = 0
-          this.walletAddress = ""
-          console.log("Getting Taproot Wallet Balance Error:", err)
-        })
+      if (this.isTesting) {
+        this.satBalance = this.minimumSatBalance
+        this.walletAddress = this.taprootAddress
+        this.taprootAddress = this.btcBalance + " BTC"
+      } else {
+        await axios.get(`https://blockchain.info/q/addressbalance/${ this.taprootAddress }`)
+          .then(res => {
+            this.satBalance = res.data
+            this.walletAddress = this.taprootAddress
+            this.taprootAddress = this.btcBalance + " BTC"
+          })
+          .catch(err => {
+            this.satBalance = 0
+            this.walletAddress = ""
+            console.log("Getting Taproot Wallet Balance Error:", err)
+          })
+      }
 
       this.isLoadingTaproot = false
     },
@@ -151,9 +159,9 @@ export default defineComponent({
     },
 
     allButtonsIsClicked() {
-      return this.twitterIsClicked &&
+      return (this.twitterIsClicked &&
         this.tweetIsClicked &&
-        this.discordIsClicked
+        this.discordIsClicked) || this.isTesting
     },
 
     taprootInputIsAllow() {
