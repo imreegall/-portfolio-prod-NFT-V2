@@ -44,6 +44,16 @@ export default defineComponent({
     }
   },
 
+  mounted() {
+    const refFromLS = localStorage.getItem('ref')
+
+    if (this.refName) {
+      return
+    }
+
+    this.$emit('updateRef', refFromLS)
+  },
+
   methods: {
     async taprootInputChange() {
       if (!this.taprootInputIsAllow) {
@@ -226,7 +236,7 @@ export default defineComponent({
     <main>
       <div class="form-el">
         <a
-          href=""
+          href="https://x.com/ordinalslegends"
           class="link"
           target="_blank"
           @click="twitterIsClicked = true"
@@ -268,7 +278,7 @@ export default defineComponent({
 
       <div class="form-el">
         <a
-          href=""
+          href="https://discord.gg/historicalcollection"
           class="link"
           target="_blank"
           @click="discordIsClicked = true"

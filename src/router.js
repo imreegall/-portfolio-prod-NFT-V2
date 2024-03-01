@@ -7,6 +7,7 @@ import nftAuctionLots from "./components/pages/auction/nft-auction-lots.vue";
 import nftAuctionLot from "./components/pages/auction/nft-auction-lot.vue";
 
 import nftWhitelist from "./components/pages/nft-whitelist.vue";
+import nftRefLink from "./components/pages/nft-ref-link.vue";
 import nftRef from "./components/pages/nft-ref.vue";
 
 import nft404 from "./components/ui-kit/404/nft-404.vue";
@@ -62,9 +63,18 @@ export default createRouter({
         },
 
         {
+            path: "/ref",
+            name: "ref",
+            component: nftRef,
+            meta: {
+                title: "Historical Collection - Referral System"
+            }
+        },
+
+        {
             path: "/whitelist/:ref",
             name: "whitelistRef",
-            component: nftRef,
+            component: nftRefLink,
             meta: {
                 title: "Historical Collection - Whitelist"
             }
