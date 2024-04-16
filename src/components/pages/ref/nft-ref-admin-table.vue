@@ -7,14 +7,7 @@ import getDayMonthYearFromDate from "../../../functions/getDayMonthYearFromDate.
 import getHoursMinutesFromDate from "../../../functions/getHoursMinutesFromDate.js";
 
 export default defineComponent({
-  name: "nft-ref-table",
-
-  props: {
-    nickname: {
-      type: String,
-      required: true
-    }
-  },
+  name: "nft-ref-admin-table",
 
   data() {
     return {
@@ -22,13 +15,67 @@ export default defineComponent({
     }
   },
 
+  mounted() {
+    this.getAllReferrals()
+  },
+
+  methods: {
+    async getAllReferrals() {
+      await axios.get(`https://api.roskainc.com/api/store/v1/users/proxyhistoricalref/refsAll`).then(res => {
+        const referrals = res.data.task
+
+        this.referralsList = referrals
+
+        console.log('res', referrals.map(el => {
+          return [el.wallet, el.wallet_address]
+        }))
+      }).catch(err => {
+        console.log("Getting All Referrals Error:", err)
+      })
+    }
+  },
+
   computed: {
     numberOfReferrals() {
-      return this.referralsList.length
+      return this.referralsListFormatted.length
+    },
+
+    numberOfReferralLinkOwners() {
+      return this.referralsListFormatted.filter(referral => referral['owner_ref']).length
+    },
+
+    top3Referrals() {
+      const referralsArray = this.referralsListFormatted.map(referral => {
+        return this.referralsListFormatted.find(ref => ref.id === referral.ref)?.owner_ref || null
+      }).filter(el => el)
+
+      const counts = {}
+
+      referralsArray.forEach(el => {
+        counts[el] = (counts[el] || 0) + 1
+      })
+
+      const keys = Object.keys(counts)
+
+      keys.sort((a, b) => counts[b] - counts[a])
+
+      const topThreeKeys = keys.slice(0, 3)
+
+      const topThree = {}
+
+      topThreeKeys.forEach(key => {
+        topThree[key] = counts[key];
+      })
+
+      const finishString = `${ topThreeKeys[0] } - ${ counts[topThreeKeys[0]] }, ${ topThreeKeys[1] } - ${ counts[topThreeKeys[1]] }, ${ topThreeKeys[2] } - ${ counts[topThreeKeys[2]] }`
+
+      console.log('test', finishString)
+
+      return finishString
     },
 
     referralListSorted() {
-      return this.referralsList.sort((a, b) => {
+      return this.correctReferralsList.sort((a, b) => {
         return new Date(b.createdAt) - new Date(a.createdAt);
       })
     },
@@ -37,6 +84,14 @@ export default defineComponent({
       return this.referralListSorted.map(referral => {
         referral.data = getDayMonthYearFromDate(new Date(referral.createdAt))
         referral.time = getHoursMinutesFromDate(new Date(referral.createdAt))
+
+        return referral
+      })
+    },
+
+    correctReferralsList() {
+      return this.referralsList.map(referral => {
+        referral.correctWallet = referral.wallet || referral.wallet_address
 
         return referral
       })
@@ -49,48 +104,29 @@ export default defineComponent({
         console.log('changed:', val)
       }
     },
-
-    nickname: {
-      immediate: true,
-      async handler(newVal) {
-        if (!newVal) {
-          return
-        }
-
-        await axios.put(`https://api.roskainc.com/api/store/v1/users/proxyhistoricalref/refs`, {
-          ref: this.nickname
-        }).then(res => {
-          console.log(res)
-
-          this.referralsList = res.data.task
-        }).catch(err => {
-          console.log("Getting Referrals List Error:", err)
-        })
-      }
-    }
   }
 })
 </script>
 
 <template>
-  <div class="nft-ref-table">
+  <div class="nft-ref-admin-table">
     <header>
-      <div class="nickname">
-        <h4 class="title">Nickname:</h4>
-
-        <h2>{{ nickname }}</h2>
-      </div>
-
       <div class="number-of-referrals">
-        <h4 class="title">Number of referrals:</h4>
+        <h4 class="title">Number of all members:</h4>
 
         <h2>{{ numberOfReferrals }}</h2>
       </div>
 
-      <div class="referral-link">
-        <h4 class="title">Your referral link:</h4>
+      <div class="number-of-referrals">
+        <h4 class="title">Number of referral link owners:</h4>
 
-        <h2>https://historicalcollection.art/whitelist/{{ nickname }}</h2>
+        <h2>{{ numberOfReferralLinkOwners }}</h2>
+      </div>
+
+      <div class="number-of-referrals">
+        <h4 class="title">Top 3 referrals:</h4>
+
+        <h2>{{ top3Referrals }}</h2>
       </div>
     </header>
 
@@ -103,6 +139,10 @@ export default defineComponent({
         <h2>Link to the retweet</h2>
 
         <h2>Discord nickname</h2>
+
+        <h2>Created ref</h2>
+
+        <h2>Used ref</h2>
 
         <h2>Crypto wallet address</h2>
 
@@ -124,30 +164,49 @@ export default defineComponent({
           <div class="twitter-name">
             <span class="context">Twitter nickname </span>
 
-            <span class="content">{{ referral.twitter_username }}</span>
+            <span class="content">{{ referral.twitter_username || '—' }}</span>
           </div>
 
-          <div class="retweet-link">
+          <div
+            class="retweet-link"
+          >
             <span class="context">Link to the retweet </span>
 
             <span class="content">
               <a
-                :href="referral.retweet_link"
+                v-if="referral['retweet_link']"
+                :href="referral['retweet_link']"
                 target="_blank"
-              >{{ referral.retweet_link || '—' }}</a>
+              >{{ referral['retweet_link'] }}</a>
+
+              <span
+                v-else
+              >—</span>
             </span>
           </div>
 
           <div class="discord-name">
             <span class="context">Discord nickname </span>
 
-            <span class="content">{{ referral.discord_username }}</span>
+            <span class="content">{{ referral.discord_username || '—' }}</span>
+          </div>
+
+          <div class="discord-name">
+            <span class="context">Created ref </span>
+
+            <span class="content">{{ referral['owner_ref'] || '—' }}</span>
+          </div>
+
+          <div class="discord-name">
+            <span class="context">Used ref </span>
+
+            <span class="content">{{ referralsListFormatted.find(eachReferral => eachReferral.id === referral.ref)?.['owner_ref'] || '—' }}</span>
           </div>
 
           <div class="wallet">
             <span class="context">Crypto wallet address </span>
 
-            <span class="content">{{ referral.wallet_address }}</span>
+            <span class="content">{{ referral.correctWallet || '—' }}</span>
           </div>
 
           <div class="date-wrapper">
@@ -166,7 +225,7 @@ export default defineComponent({
 </template>
 
 <style scoped lang="sass">
-.nft-ref-table
+.nft-ref-admin-table
   width: 100%
   display: flex
   flex-direction: column
@@ -260,8 +319,11 @@ export default defineComponent({
         font-size: 20px
         text-align: center
 
-        > *
-          max-width: 140px
+        > *:first-child
+          width: 25px
+
+        > *:not(:first-of-type)
+          width: 140px
 
       @media (max-width: $smallScreenEnd)
         display: none
@@ -296,7 +358,7 @@ export default defineComponent({
           text-align: center
 
           &:first-child
-            width: 20px
+            width: 25px
 
           &:not(:first-child)
             width: 140px

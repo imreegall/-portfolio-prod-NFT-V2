@@ -10,6 +10,8 @@ import nftWhitelist from "./components/pages/nft-whitelist.vue";
 import nftRefLink from "./components/pages/nft-ref-link.vue";
 import nftRef from "./components/pages/nft-ref.vue";
 
+import nftSale from "./components/pages/nft-sale.vue";
+
 import nft404 from "./components/ui-kit/404/nft-404.vue";
 
 export default createRouter({
@@ -77,6 +79,15 @@ export default createRouter({
             component: nftRefLink,
             meta: {
                 title: "Historical Collection - Whitelist"
+            }
+        },
+
+        {
+            path: "/sale",
+            name: "sale",
+            component: nftSale,
+            meta: {
+                title: "Historical Collection - NFT Sale"
             }
         },
 

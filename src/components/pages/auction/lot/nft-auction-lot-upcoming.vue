@@ -59,6 +59,12 @@ export default defineComponent({
 
       shareCurrentPage()
     }
+  },
+
+  computed: {
+    isNeedToShowStartDate() {
+      return this.lot.date
+    }
   }
 })
 </script>
@@ -71,7 +77,7 @@ export default defineComponent({
           :link="lot.nft.okxLink"
       />
 
-      <div class="upcoming-date">
+      <div class="upcoming-date" v-if="isNeedToShowStartDate">
         <h2 class="title">Auction start at</h2>
 
         <h2 class="date">{{ getDayMonthYearFromDate(lot.date) }}</h2>

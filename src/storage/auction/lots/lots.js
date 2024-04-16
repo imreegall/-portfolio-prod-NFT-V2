@@ -28,6 +28,6 @@ export default [
         id: "25ca24bb-2e10-4630-b6ba-6480392b258с",
         nft: nfts.Tolkien,
         status: "Upcoming",
-        date: new Date("2024-02-13T15:00:00Z")
+        // date: new Date("2024-02-13T15:00:00Z")
     }
 ]

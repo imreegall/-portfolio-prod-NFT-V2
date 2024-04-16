@@ -17,26 +17,16 @@ export default defineComponent({
 
   data() {
     return {
-      isLoadingTaproot: false,
       taprootAddress: "",
-      satBalance: 0,
-      minimumSatBalance: 2500000,
 
-      isTesting: true,
-
-      twitterIsClicked: false,
-      tweetIsClicked: false,
-      discordIsClicked: false,
       walletAddress: "",
 
       twitterUsername: "",
-      retweetPostUrl: "",
       discordUsername: "",
 
       joinLoading: false,
 
       isTwitterError: false,
-      isTweetError: false,
       isDiscordError: false,
       isWalletError: false,
 
@@ -55,38 +45,6 @@ export default defineComponent({
   },
 
   methods: {
-    async taprootInputChange() {
-      if (!this.taprootInputIsAllow) {
-        return
-      }
-
-      if (this.isLoadingTaproot) {
-        return
-      }
-
-      this.isLoadingTaproot = true
-
-      if (this.isTesting) {
-        this.satBalance = this.minimumSatBalance
-        this.walletAddress = this.taprootAddress
-        this.taprootAddress = this.btcBalance + " BTC"
-      } else {
-        await axios.get(`https://blockchain.info/q/addressbalance/${ this.taprootAddress }`)
-          .then(res => {
-            this.satBalance = res.data
-            this.walletAddress = this.taprootAddress
-            this.taprootAddress = this.btcBalance + " BTC"
-          })
-          .catch(err => {
-            this.satBalance = 0
-            this.walletAddress = ""
-            console.log("Getting Taproot Wallet Balance Error:", err)
-          })
-      }
-
-      this.isLoadingTaproot = false
-    },
-
     async handleJoinButtonClick() {
       if (!this.isJoinButtonAllow) {
         return
@@ -103,23 +61,15 @@ export default defineComponent({
 
       await axios.put(`https://api.roskainc.com/api/store/v1/users/proxyhistoricalref`, {
         "twitter_username": this.twitterUsername,
-        "retweet_link": this.retweetPostUrl,
         "discord_username": this.discordUsername,
         "wallet_address": this.walletAddress,
         "ref": this.refName
       })
         .then(res => {
-          console.log(res)
-
           const result = res.data.message
 
           if (result.includes("twitter_username")) {
             this.isTwitterError = true
-            return
-          }
-
-          if (result.includes("retweet_link")) {
-            this.isTweetError = true
             return
           }
 
@@ -145,15 +95,9 @@ export default defineComponent({
 
   computed: {
     twitterUsernameIsValid() {
-      const regexp = RegExp("^@(\\w){1,50}$")
+      const regexp = RegExp("^@?(\\w){1,50}$")
 
       return regexp.test(this.twitterUsername)
-    },
-
-    retweetPostUrlIsValid() {
-      const regexp = RegExp("https://x.com(\\/@?(\\w){1,15})\\/status\\/[0-9]{19}\\?")
-
-      return regexp.test(this.retweetPostUrl)
     },
 
     discordUsernameIsValid() {
@@ -164,34 +108,17 @@ export default defineComponent({
 
     allInputsIsValid() {
       return this.twitterUsernameIsValid &&
-        this.retweetPostUrlIsValid &&
         this.discordUsernameIsValid
     },
 
-    allButtonsIsClicked() {
-      return (this.twitterIsClicked &&
-        this.tweetIsClicked &&
-        this.discordIsClicked) || this.isTesting
-    },
+    isWalletAddressValid() {
+      const regexp = RegExp("^(\\w){1,100}$")
 
-    taprootInputIsAllow() {
-      return this.allInputsIsValid && this.allButtonsIsClicked && !this.isLoadingTaproot
-    },
-
-    btcBalance() {
-      if (this.satBalance === 0) {
-        return 0
-      }
-
-      return this.satBalance / 100000000
-    },
-
-    isAllowSatBalance() {
-      return this.satBalance >= this.minimumSatBalance
+      return regexp.test(this.walletAddress)
     },
 
     isJoinButtonAllow() {
-      return this.taprootInputIsAllow && this.isAllowSatBalance && !this.joinLoading
+      return !this.joinLoading && this.isWalletAddressValid && this.allInputsIsValid
     }
   },
 
@@ -199,15 +126,6 @@ export default defineComponent({
     twitterUsername: {
       immediate: true,
       handler() {
-        this.isTweetError = false
-        this.isSuccessJoin = false
-      }
-    },
-
-    retweetPostUrl: {
-      immediate: true,
-      handler() {
-        this.isTweetError = false
         this.isSuccessJoin = false
       }
     },
@@ -220,7 +138,7 @@ export default defineComponent({
       }
     },
 
-    taprootAddress: {
+    walletAddress: {
       immediate: true,
       handler() {
         this.isWalletError = false
@@ -239,7 +157,6 @@ export default defineComponent({
           href="https://x.com/ordinalslegends"
           class="link"
           target="_blank"
-          @click="twitterIsClicked = true"
         >
           <h2>Follow Twitter</h2>
         </a>
@@ -257,31 +174,9 @@ export default defineComponent({
 
       <div class="form-el">
         <a
-          href=""
-          class="link"
-          target="_blank"
-          @click="tweetIsClicked = true"
-        >
-          <h2>Retweet post</h2>
-        </a>
-
-        <input
-          type="text"
-          class="input"
-          :class="{
-            error: isTweetError
-          }"
-          placeholder="https://x.com/..."
-          v-model="retweetPostUrl"
-        >
-      </div>
-
-      <div class="form-el">
-        <a
           href="https://discord.gg/historicalcollection"
           class="link"
           target="_blank"
-          @click="discordIsClicked = true"
         >
           <h2>Take WL roll in Discord</h2>
         </a>
@@ -300,13 +195,8 @@ export default defineComponent({
       <input
         type="text"
         class="wallet-input"
-        :class="{
-          error: isWalletError
-        }"
-        placeholder="Write Taproof wallet with at least 0.025 BTC"
-        :disabled="!taprootInputIsAllow"
-        v-model="taprootAddress"
-        @change="taprootInputChange"
+        placeholder="Write Taproot wallet address"
+        v-model="walletAddress"
       >
 
       <div
@@ -417,6 +307,21 @@ export default defineComponent({
         &.error
           border-color: rgba(171, 40, 40, 0.53)
 
+    > .link
+      max-width: 450px
+      background-color: $lotButtonBackground
+      padding: 12px 30px 14px
+      text-align: center
+      width: 100%
+      +border-radius(41px)
+      font-size: 17px
+
+      &:hover
+        background-color: #063830
+
+      &:active
+        padding: 13px 30px 13px
+
     .wallet-input
       border: 1px solid $lotBackgroundHover
       background-color: transparent
@@ -436,16 +341,11 @@ export default defineComponent({
       &:focus
         outline: none
 
-      &:disabled
-        color: rgba(255, 255, 255, 0.2)
-        border-color: rgb(56, 68, 94)
-        +opacity(10)
-
       &.error
         border-color: rgba(171, 40, 40, 0.53)
 
     > .button
-      background-color: $green
+      background-color: #BAEA56
       width: 100%
       max-width: 450px
       +border-radius(41px)
@@ -457,15 +357,14 @@ export default defineComponent({
       font-size: 20px
 
       &:hover
-        background-color: #19d58e
+        color: #026702
 
       &:active
         padding: 13px 30px 13px
 
       &.disabled
-        background-color: #38445E
-        +opacity(10)
-        color: rgba(255, 255, 255, 0.2)
+        background-color: rgba(56, 68, 94, 0.1)
+        color: rgb(255, 255, 255)
         cursor: unset
 
     .success-message

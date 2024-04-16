@@ -6,6 +6,7 @@ import axios from "axios";
 import NftRefNeedConnect from "./ref/nft-ref-need-connect.vue";
 import nftRefSelectNickname from "./ref/nft-ref-select-nickname.vue";
 import nftRefTable from "./ref/nft-ref-table.vue";
+import nftRefAdminTable from "./ref/nft-ref-admin-table.vue";
 
 export default defineComponent({
   name: "nft-ref",
@@ -13,7 +14,8 @@ export default defineComponent({
   components: {
     NftRefNeedConnect,
     nftRefSelectNickname,
-    nftRefTable
+    nftRefTable,
+    nftRefAdminTable
   },
 
   props: {
@@ -40,6 +42,10 @@ export default defineComponent({
 
     isNeedToSelectNickname() {
       return !!this.address && !this.nickname
+    },
+
+    userIsAdmin() {
+      return JSON.parse(import.meta.env.VITE_REF_ADMIN_WALLET_ADDRESSES_LIST).includes(this.address)
     }
   },
 
@@ -73,6 +79,10 @@ export default defineComponent({
     address: {
       immediate: true,
       async handler(newVal) {
+        if (this.userIsAdmin) {
+          return
+        }
+
         if (!newVal) {
           this.nickname = ""
 
@@ -104,8 +114,12 @@ export default defineComponent({
       }"
       v-if="!isLoading"
     >
+      <nft-ref-admin-table
+        v-if="userIsAdmin"
+      />
+
       <nft-ref-need-connect
-        v-if="isNeedToConnectWallet"
+        v-else-if="isNeedToConnectWallet"
         @connect-wallet="connectWallet"
       />
 

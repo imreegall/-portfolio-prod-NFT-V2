@@ -30,6 +30,10 @@ export default defineComponent({
   computed: {
     lotPageRouteParams() {
       return { name: 'nft', params: { id: this.lot.id } }
+    },
+
+    isNeedToShowStartDate() {
+      return this.lot.date
     }
   }
 })
@@ -74,7 +78,7 @@ export default defineComponent({
         </div>
       </article>
 
-      <div class="start">
+      <div class="start" v-if="isNeedToShowStartDate">
         <h2 class="title">Auction start at</h2>
 
         <h2 class="date">{{ getDayMonthYearFromDate(lot.date) }}</h2>

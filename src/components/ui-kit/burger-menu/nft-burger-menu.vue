@@ -70,6 +70,10 @@ export default defineComponent({
         <h2 class="title">Auction house</h2>
       </router-link>
 
+      <router-link :to="{ name: 'sale' }" @click="closeBurgerMenu">
+        <h2 class="title">Whitelist</h2>
+      </router-link>
+
 <!--      <router-link :to="{ name: 'whitelist' }" @click="closeBurgerMenu">-->
 <!--        <h2 class="title">Whitelist</h2>-->
 <!--      </router-link>-->

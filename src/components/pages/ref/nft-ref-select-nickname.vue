@@ -25,8 +25,14 @@ export default defineComponent({
   },
 
   computed: {
+    isNicknameValid() {
+      const regexp = RegExp("^(\\w){1,32}$")
+
+      return regexp.test(this.nickname)
+    },
+
     isCheckButtonAllow() {
-      return this.nickname && !this.isLoading
+      return this.isNicknameValid && !this.isLoading
     },
 
     isStatusShown() {
