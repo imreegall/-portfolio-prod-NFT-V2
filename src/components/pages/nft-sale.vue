@@ -1,8 +1,10 @@
 <script>
 import { defineComponent } from 'vue'
+import nftLazyLoadImage from "../ui-kit/lazy-load-image/nft-lazy-load-image.vue";
 
 export default defineComponent({
   name: "nft-sale",
+  components: {nftLazyLoadImage},
 
   data() {
     return {
@@ -29,6 +31,68 @@ export default defineComponent({
       isShowHashError: false,
 
       thirdPage: false,
+
+      imagesRows: [
+        [
+          "Martin_Luther_King",
+          "Johann_Sebastian_Bach",
+          "Benjamin_Franklin",
+          "Leonardo_da_Vinci",
+          "Abraham_Lincoln",
+          "Henry_Ford",
+          "Omar_Khayyam",
+          "Ernesto_Cardenal",
+          "Oscar_Wilde"
+        ],
+
+        [
+          "George_Orwell",
+          "Adeline_Virginia_Woolf",
+          "William_Shakespeare",
+          "Nikola_Tesla",
+          "Steve_Jobs",
+          "Albert_Einstein",
+          "Luis_Paster",
+          "Marilyn_Monroe",
+          "Tupac_Shakur"
+        ],
+
+        [
+          "Joseph_Stalin",
+          "Charles_Dickens",
+          "Pele",
+          "Mohammad_Reza_Pahlavi",
+          "Marie_Curie",
+          "Lev_Tolstoy",
+          "Bob_Marley",
+          "Winston_Churchill",
+          "Napoleon_Bonaparte"
+        ],
+
+        [
+          "Karl_Marx",
+          "Muhammad_Ali",
+          "Michael_Faraday",
+          "Genghis_Khan",
+          "Mahatma_Gandhi",
+          "Mark_Twain",
+          "John_Kennedy",
+          "Jules_Verne",
+          "Julius_Caesar"
+        ],
+
+        [
+          "Colonel_Sanders",
+          "Edgar_Allan_Poe",
+          "Che_Guevara",
+          "Plato",
+          "Isaac_Newton",
+          "Nelson_Mandela",
+          "Janna_Dark",
+          "Fedor_Dostoevsky",
+          "Michelangelo"
+        ]
+      ],
     }
   },
 
@@ -69,7 +133,12 @@ export default defineComponent({
       this.isLoading = true
 
       setTimeout(() => {
-        this.isButtonDisabled = !this.whitelist.includes(this.address)
+        this.isButtonDisabled = !(
+          this.whitelist.includes(this.address) ||
+          this.whitelist.includes(this.address.toLowerCase()) ||
+          this.whitelist.includes(this.address.toLowerCase().trim())
+        )
+
         this.isShowWarning = this.isButtonDisabled
 
         this.isLoading = false
@@ -130,19 +199,23 @@ export default defineComponent({
         const result = await response.json()
 
         console.log("Fetching Transaction Result (success)", result)
-
-        if (!result.error) {
-          this.firstPage = false
-          this.secondPage = false
-          this.thirdPage = true
-        } else {
-          this.isShowHashError = true
-        }
+        //
+        // if (!result.error) {
+        //   this.firstPage = false
+        //   this.secondPage = false
+        //   this.thirdPage = true
+        // } else {
+        //   this.isShowHashError = true
+        // }
       }).catch((error) => {
         console.error("Fetching Transaction Error", error)
       })
 
       this.isCheckingHash = false
+
+      this.firstPage = false
+      this.secondPage = false
+      this.thirdPage = true
     }
   }
 })
@@ -151,11 +224,31 @@ export default defineComponent({
 <template>
   <div class="nft-sale">
     <div class="welcome" v-if="firstPage && !secondPage">
-      <h2 class="title">Input your wallet address:</h2>
+      <div class="nft-example">
+        <div class="nft-line">
+          <nft-lazy-load-image
+            class="nft-item"
+            v-for="image in [ ...imagesRows[2], ...imagesRows[1], ...imagesRows[3], ...imagesRows[0], ...imagesRows[4]]"
+            image-file-format="jpg"
+            :image-filename="image"
+            path-to-image="/assets/images/nfts"
+            :resolution-collection="{
+              128: 512,
+              256: 1024,
+              512: 4096,
+              1024: 8192,
+            }"
+            :alt="image.replaceAll('_', ' ')"
+            :differentFolders="true"
+          />
+        </div>
+      </div>
+
+      <h2 class="title">Put your WL wallet address:</h2>
 
       <input
         type="text"
-        placeholder="bc1p... OR 0x..."
+        placeholder="bc1p..."
         v-model="address"
       >
 
@@ -221,7 +314,7 @@ export default defineComponent({
                   type="text"
                   class="payment-details-input ordinals-input-text"
                   readonly
-                  value="bc1qpx3yzu0ld8pg4nt6758mz0t4pfskxl0268fx0a"
+                  value="bc1qz4rwyn0gt3g792cws0zavgu29u32r8jvykzlcx"
                 >
 
                 <button class="payment-details-copy" @click="copyTextToClipboard"></button>
@@ -248,7 +341,7 @@ export default defineComponent({
       <div class="payment-finish">
         <div class="payment-finish-info">
           <h6 class="l">After receiving the payment,
-            we will create and send the ordinal to
+            we will send the ordinal to
             your wallet. The transaction may take some time.</h6>
         </div>
 
@@ -270,12 +363,27 @@ export default defineComponent({
     <div class="final" v-if="thirdPage">
       <h2 class="title">Congratulations!</h2>
 
-      <h2 class="title">Expect transaction verification and NFT transfer within 2 days.</h2>
+      <h2 class="title">Expect transaction verification and Ordinal will transfer to your wallet.</h2>
     </div>
   </div>
 </template>
 
 <style scoped lang="sass">
+@keyframes removing2
+  0%
+    +opacity(100)
+
+  80%
+    +opacity(80)
+
+  100%
+    +opacity(0)
+
+@keyframes slideNFT
+  @for $i from 0 to 45
+    #{100 / 45 * $i}%
+      left: -100% * $i
+
 .ordinals-button-type1
   font-family: 'Raleway', sans-serif
   font-weight: 600
@@ -357,6 +465,40 @@ export default defineComponent({
 
     @media (max-width: $smallScreenEnd)
       gap: 30px
+
+    .nft-example
+      +border-radius(20px)
+      position: relative
+      overflow: hidden
+
+      @media (min-width: $bigScreenStart)
+        width: 634px
+        height: 634px
+
+      @media (max-width: $smallScreenEnd)
+        width: 100%
+        padding-top: 100%
+
+      .nft-line
+        height: 100%
+        width: 100%
+        position: absolute
+        top: 0
+        left: 0
+        animation-duration: 13.5s
+        animation-name:  slideNFT
+        animation-timing-function: step-end
+        animation-iteration-count: infinite
+        display: flex
+
+        .nft-item
+          +background-image-settings()
+          min-width: 100%
+          width: 100%
+          height: 100%
+          pointer-events: none
+          display: block
+
 
     > .title
       font-size: 24px

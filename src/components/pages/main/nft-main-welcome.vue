@@ -37,6 +37,11 @@ export default defineComponent({
             href="https://www.okx.com/web3/marketplace/nft/collection/btc/historical-collection-1"
             target="_blank"
         >OKX marketplace</a></h2>
+
+        <h2
+          class="nft-button content-button"
+          @click="$router.push({ name: 'sale' })"
+        >Presale</h2>
       </div>
     </div>
   </div>

@@ -1,7 +1,10 @@
 <template>
   <div class="nft-footer">
     <div class="footer-info">
-      <div class="info-logo"></div>
+      <div
+        class="info-logo"
+        @click="$router.push({ name: 'main' })"
+      ></div>
 
       <div class="info-social">
         <a
@@ -84,6 +87,7 @@ export default {
       .info-logo
         background-image: url("/assets/images/svg/logo.svg")
         +background-image-settings()
+        cursor: pointer
 
         @media (min-width: $bigScreenStart)
           width: 80px

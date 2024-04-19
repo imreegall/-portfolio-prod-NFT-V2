@@ -105,7 +105,7 @@ export default defineComponent({
       padding: 24px 16px 0
 
     > .title
-      font-family: "VujahdayScript", "Calibri Light", sans-serif
+      font-family: "Freckle Face", "VujahdayScript", "Calibri Light", sans-serif
       text-align: center
       +user-select(none)
 
